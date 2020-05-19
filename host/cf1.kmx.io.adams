@@ -21,6 +21,12 @@
                        :mode #o600)
           ;; pf
           #.(include "pf")
+          ;; dhcpd
+          (static-file "/etc/dhcpd.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600
+                       :after #'reload-dhcpd)
           ;; sshd
           #.(include "sshd")
           ;; genpassword

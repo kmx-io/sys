@@ -1,3 +1,7 @@
+(defun reload-dhcpd (resource os)
+  (declare (ignore resource os))
+  (run-as-root "/etc/rc.d/dhcpd restart"))
+
 (defun reload-iked (resource os)
   (declare (ignore resource os))
   (run-as-root "/etc/rc.d/iked reload"))
