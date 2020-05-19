@@ -11,16 +11,42 @@
           :owner "root"
           :group "git"
           :mode #o640
-          :content (read-file "vu.kmx.io/etc/git-auth.conf"))
+          :content (read-file "git/etc/git-auth.conf"))
 (resource 'directory "/home/git"
           :owner "git"
           :group "git"
-          :mode #o700)
+          :mode #o750)
 (resource 'directory "/home/git/.ssh"
           :owner "git"
           :group "git"
           :mode #o700)
-(static-file "/home/git/.ssh/authorized_keys"
-             :owner "root"
-             :group "git"
-             :mode #o640)
+(resource 'file "/home/git/.ssh/authorized_keys"
+          :owner "root"
+          :group "git"
+          :mode #o640
+          :content (read-file "git/home/git/.ssh/authorized_keys"))
+(resource 'group "git-backup"
+          :gid 7001
+          :ensure :present)
+(resource 'user "git-backup"
+          :uid 7001
+          :gid 7001
+          :groups '("git-backup" "git")
+          :home "/home/git-backup"
+          :shell "/bin/ksh"
+          :ensure :present)
+(resource 'directory "/home/git-backup"
+          :owner "git-backup"
+          :group "git-backup"
+          :mode #o700
+          :ensure :present)
+(resource 'directory "/home/git-backup/.ssh"
+          :owner "git-backup"
+          :group "git-backup"
+          :mode #o700
+          :ensure :present)
+(resource 'file "/home/git-backup/.ssh/authorized_keys"
+          :owner "root"
+          :group "git-backup"
+          :mode #o640
+          :content (read-file "git/home/git-backup/.ssh/authorized_keys"))
