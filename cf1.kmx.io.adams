@@ -1,0 +1,12 @@
+#!/usr/local/bin/adams --script
+
+(require :adams)
+
+(in-package :adams-user)
+
+(load "OpenBSD/reload.lisp")
+
+#.(include "host/cf1.kmx.io")
+
+(with-host "cf1.kmx.io"
+  (sync *host*))

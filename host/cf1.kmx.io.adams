@@ -1,0 +1,35 @@
+(setq *host* (host "cf1.kmx.io"))
+
+(resource 'host "cf1.kmx.io"
+          :user "root"
+          :hostname "cf1"
+          :packages '("emacs:no_x11"
+                      "git"
+                      "rsync")
+          ;; rc
+          (static-file "/etc/rc.conf.local"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          (static-file "/etc/hostname.em0"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          (static-file "/etc/hostname.em1"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          ;; pf
+          #.(include "pf")
+          ;; sshd
+          #.(include "sshd")
+          ;; genpassword
+          #.(include "OpenBSD/genpassword")
+          ;; backup
+          #.(include "OpenBSD/backup")
+          ;; tunnel
+          #.(include "tunnel")
+          ;; users
+          #.(include "user/dx")
+          ;; git
+          #.(include "git"))
