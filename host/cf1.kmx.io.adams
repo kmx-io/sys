@@ -33,6 +33,10 @@
           #.(include "OpenBSD/genpassword")
           ;; backup
           #.(include "OpenBSD/backup")
+          (static-file "/usr/local/bin/backup_cf1.kmx.io"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o700)
           ;; tunnel
           #.(include "tunnel")
           ;; users
