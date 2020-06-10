@@ -84,5 +84,6 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o755)
+          #.(include "mana/staging")
           #.(include "seuldanslenoir/staging")
-          #.(include "mana/staging"))
+          #.(include "skills/staging"))

@@ -29,4 +29,6 @@
   seuldanslenoir-staging  3002
   mana-staging            3003
   mana                    3004
+  skills                  3005
+  skills-staging          3006
 ```
