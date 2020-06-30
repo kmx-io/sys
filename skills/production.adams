@@ -1,0 +1,28 @@
+(resource 'group "skills"
+          :gid 3005
+          :ensure :present)
+(resource 'user "skills"
+          :uid 3005
+          :gid 3005
+          :home "/home/skills"
+          :shell "/bin/ksh"
+          :ensure :present)
+(resource 'directory "/home/skills"
+          :owner "skills"
+          :group "skills"
+          :mode #o750)
+(resource 'directory "/var/www/skills"
+          :owner "skills"
+          :group "www"
+          :mode #o755
+          :ensure :present)
+(resource 'file "/etc/nginx/available/skills.conf"
+          :owner "root"
+          :group "wheel"
+          :mode #o644
+          :content (read-file "skills/etc/nginx/available/skills.conf"))
+(resource 'file "/etc/rc.d/skills"
+          :owner "root"
+          :group "wheel"
+          :mode #o755
+          :content (read-file "skills/etc/rc.d/skills"))

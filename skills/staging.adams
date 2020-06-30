@@ -21,3 +21,8 @@
           :group "wheel"
           :mode #o644
           :content (read-file "skills/etc/nginx/available/skills-staging.conf"))
+(resource 'file "/etc/rc.d/skills_staging"
+          :owner "root"
+          :group "wheel"
+          :mode #o755
+          :content (read-file "skills/etc/rc.d/skills_staging"))
