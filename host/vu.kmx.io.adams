@@ -86,4 +86,5 @@
                        :mode #o755)
           #.(include "mana/staging")
           #.(include "seuldanslenoir/staging")
-          #.(include "skills/staging"))
+          #.(include "skills/staging")
+          #.(include "skills/production"))
