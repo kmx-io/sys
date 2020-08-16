@@ -13,8 +13,10 @@
 (resource 'directory "/etc/nginx/enabled"
           :owner "root"
           :group "wheel"
-          :mode #o755)
+          :mode #o755
+          :ensure :present)
 (resource 'directory "/etc/nginx/available"
           :owner "root"
           :group "wheel"
-          :mode #o755)
+          :mode #o755
+          :ensure :present)
