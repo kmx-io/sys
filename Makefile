@@ -7,7 +7,10 @@ cf:
 cf1:
 	./cf1.kmx.io.adams
 
+oa:
+	./oa.kmx.io.adams
+
 vu:
 	./vu.kmx.io.adams
 
-.PHONY: all cf cf1 vu
+.PHONY: all cf cf1 oa vu
