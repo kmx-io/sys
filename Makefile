@@ -1,6 +1,9 @@
 
 all: cf vu
 
+ams:
+	./ams.kmx.io.adams
+
 cf:
 	./cf.kmx.io.adams
 

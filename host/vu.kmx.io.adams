@@ -67,7 +67,8 @@
           (resource 'directory "/home/scripts"
                     :owner "root"
                     :group "wheel"
-                    :mode #o755)
+                    :mode #o755
+                    :ensure :present)
           (static-file "/home/scripts/deploy"
                        :owner "root"
                        :group "wheel"
