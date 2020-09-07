@@ -1,0 +1,34 @@
+(resource 'group "letsencrypt"
+          :gid 7100
+          :ensure :present)
+(resource 'user "letsencrypt"
+          :uid 7100
+          :gid 7100
+          :home "/home/letsencrypt"
+          :shell "/bin/ksh"
+          :ensure :present)
+(resource 'directory "/home/letsencrypt"
+          :owner "letsencrypt"
+          :group "letsencrypt"
+          :mode #o750)
+(resource 'directory "/home/letsencrypt/config"
+          :owner "letsencrypt"
+          :group "letsencrypt"
+          :mode #o750)
+(resource 'directory "/home/letsencrypt/log"
+          :owner "letsencrypt"
+          :group "letsencrypt"
+          :mode #o750)
+(resource 'directory "/home/letsencrypt/work"
+          :owner "letsencrypt"
+          :group "letsencrypt"
+          :mode #o750)
+(static-file "/home/letsencrypt/domains"
+             :owner "letsencrypt"
+             :group "letsencrypt"
+             :mode #o640)
+(resource 'file "/home/letsencrypt/certbot.sh"
+          :owner "letsencrypt"
+          :group "letsencrypt"
+          :mode #o750
+          :content (read-file "letsencrypt/home/letsencrypt/certbot.sh"))

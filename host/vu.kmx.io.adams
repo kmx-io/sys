@@ -61,6 +61,8 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o644)
+          ;; letsencrypt
+          #.(include "letsencrypt")
           ;; PostgreSQL
           #.(include "postgresql")
           ;; Deploy scripts
