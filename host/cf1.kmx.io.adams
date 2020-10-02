@@ -41,5 +41,6 @@
           #.(include "tunnel")
           ;; users
           #.(include "user/dx")
+          #.(include "user/vrizzt")
           ;; git
           #.(include "git"))

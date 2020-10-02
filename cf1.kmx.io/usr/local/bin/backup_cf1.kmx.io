@@ -3,7 +3,7 @@ set -e
 
 DIR=/usb/backup/cf1.kmx.io
 
-SLOT=$(hanoi 4 $(day))
+SLOT=$(/usr/local/bin/hanoi 4 $(/usr/local/bin/day))
 DIR_SLOT=${DIR}/${SLOT}
 
 run() {
