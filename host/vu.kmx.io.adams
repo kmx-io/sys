@@ -87,6 +87,7 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o755)
+          #.(include "www.kmx.io/production")
           #.(include "mana/staging")
           #.(include "seuldanslenoir/staging")
           #.(include "skills/staging")
