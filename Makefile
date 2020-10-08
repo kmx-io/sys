@@ -13,6 +13,9 @@ cf1:
 oa:
 	./oa.kmx.io.adams
 
+reed:
+	./reed.kmx.io.adams
+
 vu:
 	./vu.kmx.io.adams
 
