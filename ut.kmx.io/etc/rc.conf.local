@@ -1,3 +1,4 @@
+apmd_flags=
 unbound_flags=
 
 pkg_scripts="nginx postgresql"
