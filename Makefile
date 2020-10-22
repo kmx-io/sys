@@ -1,5 +1,5 @@
 
-all: cf vu
+all: ams cf1 reed vu
 
 ams:
 	./ams.kmx.io.adams
@@ -16,7 +16,10 @@ oa:
 reed:
 	./reed.kmx.io.adams
 
+ut:
+	./ut.kmx.io.adams
+
 vu:
 	./vu.kmx.io.adams
 
-.PHONY: all cf cf1 oa vu
+.PHONY: all ams cf cf1 oa reed ut vu
