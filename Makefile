@@ -1,6 +1,9 @@
 
 all: ams cf1 reed vu
 
+amd:
+	./amd.kmx.io.adams
+
 ams:
 	./ams.kmx.io.adams
 

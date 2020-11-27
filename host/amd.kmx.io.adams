@@ -4,6 +4,8 @@
           :user "root"
           :hostname "amd"
           #.(include "user/dx")
+          #.(include "user/judy")
+          #.(include "user/noglitch")
           ;; rc
           (static-file "/etc/rc.conf.local"
                        :owner "root"
