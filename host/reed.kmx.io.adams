@@ -3,14 +3,12 @@
 (resource 'host "reed.kmx.io"
           :user "root"
           :hostname "reed"
-          :packages '("emacs:no_x11"
+          :packages '("emacs:gtk3"
                       "elixir"
-                      "erlang-21.2p2v0"
+                      "erlang"
                       "git"
                       "rebar21"
                       "rsync"
-                      "ruby-2.5.7"
-                      "sbcl"
                       "texinfo"
                       "texlive_texmf-full")
           ;; rc
