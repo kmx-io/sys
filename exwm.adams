@@ -1,0 +1,17 @@
+(resource 'group "exwm_smtp"
+          :gid 7900
+          :ensure :present)
+(resource 'user "exwm_smtp"
+          :uid 7900
+          :gid 7900
+          :home "/home/exwm_smtp"
+          :ensure :present)
+
+(resource 'group "exwm_web"
+          :gid 3009
+          :ensure :present)
+(resource 'user "exwm_web"
+          :uid 3009
+          :gid 3009
+          :home "/home/exwm_web"
+          :ensure :present)

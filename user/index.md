@@ -21,6 +21,7 @@
   git               7000
   postgres          7200
   tunnel            7800
+  exwm_smtp         7900
 ```
 
 ## Websites
@@ -33,4 +34,5 @@
   skills-staging          3006
   www_kmx_io              3007
   noglitch                3008
+  exwm_web                3009
 ```

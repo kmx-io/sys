@@ -91,4 +91,5 @@
           #.(include "mana/staging")
           #.(include "seuldanslenoir/staging")
           #.(include "skills/staging")
-          #.(include "skills/production"))
+          #.(include "skills/production")
+          #.(include "exwm"))
