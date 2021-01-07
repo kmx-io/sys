@@ -3,8 +3,7 @@
 (resource 'host "vu.kmx.io"
           :user "root"
           :hostname "vu"
-          :packages '("emacs:no_x11"
-                      "elixir"
+          :packages '("elixir"
                       "erlang"
                       "git"
                       "nginx"
@@ -12,9 +11,7 @@
                       "rebar21"
                       "rsync"
                       "ruby"
-                      "sbcl"
-                      "texinfo"
-                      "texlive_texmf-full")
+                      "sbcl")
           ;; rc
           (static-file "/etc/rc.conf.local"
                        :owner "root"
