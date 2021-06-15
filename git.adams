@@ -50,3 +50,8 @@
           :group "git-backup"
           :mode #o640
           :content (read-file "git/home/git-backup/.ssh/authorized_keys"))
+(resource 'file "/usr/local/bin/backup_git@vu.kmx.io"
+          :owner "root"
+          :group "git-backup"
+          :mode #o750
+          :content (read-file "git/usr/local/bin/backup_git@vu.kmx.io"))
