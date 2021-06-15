@@ -1,0 +1,45 @@
+(setq *host* (host "p13.kmx.io"))
+
+(resource 'host "p13.kmx.io"
+          :user "root"
+          :hostname "cf1"
+          :packages '("git"
+                      "rsync")
+          ;; rc
+          (static-file "/etc/rc.conf.local"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          (static-file "/etc/hostname.em0"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          (static-file "/etc/hostname.em1"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          ;; pf
+          #.(include "pf")
+          ;; dhcpd
+          (static-file "/etc/dhcpd.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600
+                       :after #'reload-dhcpd)
+          ;; sshd
+          #.(include "sshd")
+          ;; genpassword
+          #.(include "OpenBSD/genpassword")
+          ;; backup
+          #.(include "OpenBSD/backup")
+          (static-file "/usr/local/bin/backup_cf1.kmx.io"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o700)
+          ;; tunnel
+          #.(include "tunnel")
+          ;; users
+          #.(include "user/dx")
+          #.(include "user/vrizzt")
+          ;; git
+          #.(include "git"))
