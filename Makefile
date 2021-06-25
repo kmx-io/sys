@@ -19,6 +19,9 @@ p13:
 reed:
 	./reed.kmx.io.adams
 
+t410:
+	./t410.kmx.io.adams
+
 t60:
 	./t60.kmx.io.adams
 
@@ -28,4 +31,4 @@ ut:
 vu:
 	./vu.kmx.io.adams
 
-.PHONY: all ams cf oa p13 reed ut vu
+.PHONY: all ams cf oa p13 reed t410 t60 ut vu
