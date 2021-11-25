@@ -1,0 +1,29 @@
+(resource 'group "kmxgit"
+          :gid 3010
+          :ensure :present)
+(resource 'user "kmxgit"
+          :uid 3010
+          :gid 3010
+          :groups '("git")
+          :home "/home/kmxgit"
+          :shell "/bin/ksh"
+          :ensure :present)
+(resource 'directory "/home/kmxgit"
+          :owner "kmxgit"
+          :group "kmxgit"
+          :mode #o750)
+(resource 'directory "/var/www/kmxgit"
+          :owner "kmxgit"
+          :group "www"
+          :mode #o755
+          :ensure :present)
+(resource 'file "/etc/nginx/available/kmxgit.conf"
+          :owner "root"
+          :group "wheel"
+          :mode #o644
+          :content (read-file "kmxgit/etc/nginx/available/kmxgit.conf"))
+(resource 'file "/etc/rc.d/kmxgit"
+          :owner "root"
+          :group "wheel"
+          :mode #o755
+          :content (read-file "kmxgit/etc/rc.d/kmxgit"))

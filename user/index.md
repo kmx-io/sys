@@ -35,4 +35,5 @@
   www_kmx_io              3007
   noglitch                3008
   exwm_web                3009
+  kmxgit                  3010
 ```

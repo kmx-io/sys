@@ -7,11 +7,16 @@
           :home "/home/git"
           :shell "/usr/local/bin/git-auth"
           :ensure :present)
-(resource 'file "/etc/git-auth.conf"
+(resource 'directory "/etc/git"
+          :owner "root"
+          :group "git"
+          :mode #o660
+          :ensure :present)
+(resource 'file "/etc/git/auth.conf"
           :owner "root"
           :group "git"
           :mode #o640
-          :content (read-file "git/etc/git-auth.conf"))
+          :content (read-file "git/etc/git/auth.conf"))
 (resource 'directory "/home/git"
           :owner "git"
           :group "git"
