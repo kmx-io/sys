@@ -4,7 +4,7 @@
 (resource 'user "git"
           :uid 7000
           :gid 7000
-          :home "/home/git"
+          :home (homedir "git")
           :shell "/usr/local/bin/git-auth"
           :ensure :present)
 (resource 'directory "/etc/git"
@@ -13,19 +13,21 @@
           :mode #o660
           :ensure :present)
 (resource 'file "/etc/git/auth.conf"
-          :owner "root"
+          :owner "git"
           :group "git"
           :mode #o640
           :content (read-file "git/etc/git/auth.conf"))
-(resource 'directory "/home/git"
+(resource 'directory (homedir "git")
           :owner "git"
           :group "git"
-          :mode #o750)
-(resource 'directory "/home/git/.ssh"
+          :mode #o750
+          :ensure :present)
+(resource 'directory (str (homedir "git") "/.ssh")
           :owner "git"
           :group "git"
-          :mode #o700)
-(resource 'file "/home/git/.ssh/authorized_keys"
+          :mode #o700
+          :ensure :present)
+(resource 'file (str (homedir "git") "/.ssh/authorized_keys")
           :owner "root"
           :group "git"
           :mode #o640
@@ -37,20 +39,20 @@
           :uid 7001
           :gid 7001
           :groups '("git-backup" "git")
-          :home "/home/git-backup"
+          :home (homedir "git-backup")
           :shell "/bin/ksh"
           :ensure :present)
-(resource 'directory "/home/git-backup"
+(resource 'directory (homedir "git-backup")
           :owner "git-backup"
           :group "git-backup"
           :mode #o700
           :ensure :present)
-(resource 'directory "/home/git-backup/.ssh"
+(resource 'directory (str (homedir "git-backup") "/.ssh")
           :owner "git-backup"
           :group "git-backup"
           :mode #o700
           :ensure :present)
-(resource 'file "/home/git-backup/.ssh/authorized_keys"
+(resource 'file (str (homedir "git-backup") "/.ssh/authorized_keys")
           :owner "root"
           :group "git-backup"
           :mode #o640
@@ -58,5 +60,7 @@
 (resource 'file "/usr/local/bin/backup_git@vu.kmx.io"
           :owner "root"
           :group "git-backup"
-          :mode #o750
-          :content (read-file "git/usr/local/bin/backup_git@vu.kmx.io"))
+          :mode #o755
+          :content (etypecase (host-os *host*)
+                     (os-darwin (read-file "git/usr/local/bin/backup_git@vu.kmx.io_darwin"))
+                     (os (read-file "git/usr/local/bin/backup_git@vu.kmx.io"))))

@@ -1,5 +1,5 @@
 
-all: ams cf1 reed vu
+all: reed vu
 
 amd:
 	./amd.kmx.io.adams
@@ -9,6 +9,9 @@ ams:
 
 cf:
 	./cf.kmx.io.adams
+
+mbp:
+	./mbp.kmx.io.adams
 
 oa:
 	./oa.kmx.io.adams

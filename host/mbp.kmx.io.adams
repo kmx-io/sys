@@ -1,0 +1,9 @@
+(setq *host* (resource 'host "mbp.kmx.io"))
+
+(resource 'host "mbp.kmx.io"
+          :user "root"
+          :hostname "mbp"
+          ;; users
+          #.(include "user/dx")
+          ;; git
+          #.(include "git"))

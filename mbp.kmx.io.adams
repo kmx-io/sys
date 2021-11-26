@@ -1,0 +1,9 @@
+#!/usr/local/bin/adams --script
+
+(asdf:load-system :adams)
+(in-package :adams-user)
+
+#.(include "host/mbp.kmx.io")
+
+(with-host "mbp.kmx.io"
+  (sync *host*))

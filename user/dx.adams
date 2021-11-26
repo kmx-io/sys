@@ -5,5 +5,5 @@
 (resource 'user "dx"
           :uid 19256
           :gid 19256
-          :home "/home/dx"
+          :home (homedir "dx")
           :ensure :present)

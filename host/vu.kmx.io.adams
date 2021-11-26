@@ -85,7 +85,7 @@
                        :group "wheel"
                        :mode #o755)
           #.(include "www.kmx.io/production")
-          #.(include "kmxgit/production")
+          ;;;#.(include "kmxgit/production")
           #.(include "mana/staging")
           #.(include "seuldanslenoir/staging")
           #.(include "skills/staging")
