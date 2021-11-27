@@ -10,7 +10,7 @@
 (resource 'directory "/etc/git"
           :owner "root"
           :group "git"
-          :mode #o660
+          :mode #o770
           :ensure :present)
 (resource 'file "/etc/git/auth.conf"
           :owner "git"
