@@ -1,17 +1,18 @@
-(setq *host* (host "vu.kmx.io"))
+(setq *host*
+      (resource 'host "vu.kmx.io"
+                :user "root"
+                :hostname "vu"
+                :packages '("elixir"
+                            "erlang"
+                            "git"
+                            "nginx"
+                            "postgresql-server"
+                            "rebar21"
+                            "rsync"
+                            "ruby"
+                            "sbcl")))
 
 (resource 'host "vu.kmx.io"
-          :user "root"
-          :hostname "vu"
-          :packages '("elixir"
-                      "erlang"
-                      "git"
-                      "nginx"
-                      "postgresql-server"
-                      "rebar21"
-                      "rsync"
-                      "ruby"
-                      "sbcl")
           ;; rc
           (static-file "/etc/rc.conf.local"
                        :owner "root"
