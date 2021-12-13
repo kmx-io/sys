@@ -9,6 +9,7 @@
 ```
   vrizzt            5000
   judy              5001
+  s0ca              5003
 ```
 
 ## Work

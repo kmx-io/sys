@@ -19,6 +19,9 @@ oa:
 p13:
 	./p13.kmx.io.adams
 
+pfem:
+	./pfem.kmx.io.adams
+
 reed:
 	./reed.kmx.io.adams
 

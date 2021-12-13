@@ -16,7 +16,7 @@
           :owner "git"
           :group "git"
           :mode #o640
-          :content (read-file "git/etc/git/auth.conf"))
+          :ensure :present)
 (resource 'directory (homedir "git")
           :owner "git"
           :group "git"
@@ -28,10 +28,9 @@
           :mode #o700
           :ensure :present)
 (resource 'file (str (homedir "git") "/.ssh/authorized_keys")
-          :owner "root"
+          :owner "git"
           :group "git"
-          :mode #o640
-          :content (read-file "git/home/git/.ssh/authorized_keys"))
+          :mode #o600)
 (resource 'group "git-backup"
           :gid 7001
           :ensure :present)

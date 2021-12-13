@@ -1,0 +1,4 @@
+dhcpd_flags=em1 em2 em3
+resolvd_flags=NO
+unbound_flags=
+pkg_scripts=

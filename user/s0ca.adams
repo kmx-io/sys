@@ -1,0 +1,9 @@
+;; Mathias s0ca
+(resource 'group "s0ca"
+          :gid 5003
+          :ensure :present)
+(resource 'user "s0ca"
+          :uid 5003
+          :gid 5003
+          :home (homedir "s0ca")
+          :ensure :present)

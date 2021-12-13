@@ -45,8 +45,8 @@
           ;; users
           #.(include "user/dx")
           #.(include "user/judy")
+          #.(include "user/s0ca")
           #.(include "user/vrizzt")
-          #.(include "user/wilrib")
           ;; git
           #.(include "git")
           ;; Nginx
@@ -86,7 +86,7 @@
                        :group "wheel"
                        :mode #o755)
           #.(include "www.kmx.io/production")
-          ;;;#.(include "kmxgit/production")
+          #.(include "kmxgit/production")
           #.(include "mana/staging")
           #.(include "seuldanslenoir/staging")
           #.(include "skills/staging")

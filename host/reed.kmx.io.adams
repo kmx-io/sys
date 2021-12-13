@@ -1,9 +1,9 @@
-(setq *host* (host "reed.kmx.io"))
+(setq *host* (resource 'host "reed.kmx.io"
+                       :user "root"))
 
 (resource 'host "reed.kmx.io"
-          :user "root"
           :hostname "reed"
-          :packages '("emacs:gtk3"
+          :packages '("emacs:no_x11"
                       "elixir"
                       "erlang"
                       "git"
@@ -35,4 +35,5 @@
           #.(include "user/judy")
           #.(include "user/vrizzt")
           ;; git
-          #.(include "git"))
+          #.(include "git")
+          #.(include "nginx"))
