@@ -23,8 +23,8 @@
           :ensure :present)
 (resource 'file "/etc/nginx/available/www.kmx.io.conf"
           :owner "root"
-          :group "wheel"
-          :mode #o644
+          :group "www"
+          :mode #o640
           :content (read-file "www.kmx.io/etc/nginx/available/www.kmx.io.conf"))
 (resource 'file "/etc/rc.d/www_kmx_io"
           :owner "root"

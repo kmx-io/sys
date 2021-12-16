@@ -1,23 +1,13 @@
 
-all: reed vu
+all: reed vu pfem
 
-amd:
-	./amd.kmx.io.adams
-
-ams:
-	./ams.kmx.io.adams
-
-cf:
-	./cf.kmx.io.adams
+git: vu pfem reed
 
 mbp:
 	./mbp.kmx.io.adams
 
-oa:
-	./oa.kmx.io.adams
-
-p13:
-	./p13.kmx.io.adams
+otter:
+	./otter.kmx.io.adams
 
 pfem:
 	./pfem.kmx.io.adams
@@ -31,10 +21,7 @@ t410:
 t60:
 	./t60.kmx.io.adams
 
-ut:
-	./ut.kmx.io.adams
-
 vu:
 	./vu.kmx.io.adams
 
-.PHONY: all ams cf oa p13 reed t410 t60 ut vu
+.PHONY: all git mbp otter pfem reed t410 t60 vu

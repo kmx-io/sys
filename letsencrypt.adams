@@ -10,19 +10,23 @@
 (resource 'directory "/home/letsencrypt"
           :owner "letsencrypt"
           :group "letsencrypt"
-          :mode #o750)
+          :mode #o750
+          :ensure :present)
 (resource 'directory "/home/letsencrypt/config"
           :owner "letsencrypt"
           :group "letsencrypt"
-          :mode #o750)
+          :mode #o750
+          :ensure :present)
 (resource 'directory "/home/letsencrypt/log"
           :owner "letsencrypt"
           :group "letsencrypt"
-          :mode #o750)
+          :mode #o750
+          :ensure :present)
 (resource 'directory "/home/letsencrypt/work"
           :owner "letsencrypt"
           :group "letsencrypt"
-          :mode #o750)
+          :mode #o750
+          :ensure :present)
 (static-file "/home/letsencrypt/domains"
              :owner "letsencrypt"
              :group "letsencrypt"

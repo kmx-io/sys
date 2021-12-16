@@ -1,0 +1,54 @@
+(setq *host*
+      (resource 'host "otter.kmx.io"
+                :user "root"
+                :hostname "otter"
+                :packages '("elixir"
+                            "erlang"
+                            "git"
+                            "nginx"
+                            "postgresql-server"
+                            "rebar21"
+                            "rsync"
+                            "ruby"
+                            "sbcl")))
+
+(resource 'host "otter.kmx.io"
+          ;; rc
+          (static-file "/etc/rc.conf.local"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          (static-file "/etc/hostname.ix0"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
+          ;; pf
+          #.(include "pf")
+          ;; sshd
+          #.(include "sshd")
+          ;; genpassword
+          #.(include "OpenBSD/genpassword")
+          ;; backup
+          #.(include "OpenBSD/backup")
+          ;; users
+          #.(include "user/dx")
+          #.(include "user/vrizzt")
+          ;; git
+          #.(include "git")
+          ;; letsencrypt
+          #.(include "letsencrypt")
+          ;; Nginx
+          #.(include "nginx")
+          (static-file "/etc/nginx/listen_http.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644)
+          (static-file "/etc/nginx/listen_https.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644)
+          ;; PostgreSQL
+          #.(include "postgresql")
+          #.(include "www.kmx.io/production")
+          #.(include "skills/production")
+          #.(include "exwm"))
