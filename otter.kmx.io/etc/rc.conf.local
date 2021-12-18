@@ -1,1 +1,1 @@
-pkg_scripts="nginx postgresql"
+pkg_scripts="postgresql fcgiwrap nginx kmxgit skills www_kmx_io"
