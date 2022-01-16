@@ -20,6 +20,10 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
+          (static-file "/etc/mpd.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o640)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -36,4 +40,7 @@
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
-          #.(include "nginx"))
+          ;; www
+          #.(include "nginx")
+          #.(include "letsencrypt")
+          #.(include "kmxgit/production"))

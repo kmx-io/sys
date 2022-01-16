@@ -1,3 +1,5 @@
+(resource 'group "www"
+          :ensure :present)
 (resource 'directory "/etc/nginx"
           :owner "root"
           :group "wheel"
@@ -20,3 +22,11 @@
           :group "wheel"
           :mode #o755
           :ensure :present)
+(static-file "/etc/nginx/listen_http.conf"
+             :owner "root"
+             :group "wheel"
+             :mode #o644)
+(static-file "/etc/nginx/listen_https.conf"
+             :owner "root"
+             :group "wheel"
+             :mode #o644)

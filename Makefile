@@ -1,7 +1,7 @@
 
-all: reed vu pfem
+all: reed vu pfem otter
 
-git: vu pfem reed
+git: pfem vu otter
 
 mbp:
 	./mbp.kmx.io.adams

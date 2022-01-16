@@ -22,6 +22,10 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
+          (static-file "/etc/mail/smtpd.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o640)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -39,16 +43,11 @@
           #.(include "letsencrypt")
           ;; Nginx
           #.(include "nginx")
-          (static-file "/etc/nginx/listen_http.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
-          (static-file "/etc/nginx/listen_https.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
           ;; PostgreSQL
           #.(include "postgresql")
-          #.(include "www.kmx.io/production")
+          ;; Sites
+          #.(include "exwm")
+          #.(include "kmxgit/production")
+          #.(include "sdln/production")
           #.(include "skills/production")
-          #.(include "exwm"))
+          #.(include "www.kmx.io/production"))

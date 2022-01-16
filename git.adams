@@ -63,18 +63,10 @@
           :content (etypecase (host-os *host*)
                      (os-darwin (read-file "git/usr/local/bin/backup_git@vu.kmx.io_darwin"))
                      (os (read-file "git/usr/local/bin/backup_git@vu.kmx.io"))))
-(resource 'directory "/var/www/kmxgit"
-          :owner "git"
-          :group "www"
-          :mode #o755
-          :ensure :present)
-(resource 'file "/etc/nginx/available/kmxgit.conf"
+(resource 'file "/usr/local/bin/backup_git@otter.kmx.io"
           :owner "root"
-          :group "www"
-          :mode #o640
-          :content (read-file "git/etc/nginx/available/kmxgit.conf"))
-(resource 'file "/etc/rc.d/kmxgit"
-          :owner "root"
-          :group "wheel"
+          :group "git-backup"
           :mode #o755
-          :content (read-file "git/etc/rc.d/kmxgit"))
+          :content (etypecase (host-os *host*)
+                     (os-darwin (read-file "git/usr/local/bin/backup_git@otter.kmx.io_darwin"))
+                     (os (read-file "git/usr/local/bin/backup_git@otter.kmx.io"))))

@@ -1,0 +1,6 @@
+#!/bin/sh
+if [[ $(whoami) = git ]]; then
+    exec nice rsync -aHP 'git-backup@otter.kmx.io:/home/git/*' /Users/git/
+else
+    exec sudo -u git "$0"
+fi

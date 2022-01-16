@@ -32,8 +32,6 @@
                        :mode #o600)
           ;; pf
           #.(include "pf")
-          ;; iked
-          #.(include "iked")
           ;; sshd
           #.(include "sshd")
           ;; genpassword
@@ -51,14 +49,6 @@
           #.(include "git")
           ;; Nginx
           #.(include "nginx")
-          (static-file "/etc/nginx/listen_http.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
-          (static-file "/etc/nginx/listen_https.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
           ;; letsencrypt
           #.(include "letsencrypt")
           ;; PostgreSQL

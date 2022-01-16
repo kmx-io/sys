@@ -1,4 +1,3 @@
-httpd_flags=
-unbound_flags=
+httpd_flags=NO
 
-pkg_scripts=tunnel_vu_kmx_io tunnel_p13_kmx_io
+pkg_scripts="icecast mpd nginx"

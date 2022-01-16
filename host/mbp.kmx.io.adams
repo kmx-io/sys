@@ -5,5 +5,9 @@
           :hostname "mbp"
           ;; users
           #.(include "user/dx")
+          ;; genpassword
+          #.(include "OpenBSD/genpassword")
+          ;; nginx
+          #.(include "nginx")
           ;; git
           #.(include "git"))
