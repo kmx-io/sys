@@ -10,6 +10,8 @@
 15006 skills-staging
 15007 www.kmx.io
 15008 kmxgit
+15009 kmxgit_test
+15010 kmxmetrics
 
 15015 exwm_web
 

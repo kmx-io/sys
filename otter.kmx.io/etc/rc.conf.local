@@ -1,1 +1,1 @@
-pkg_scripts="postgresql fcgiwrap nginx redis rspamd exwm_smtp exwm_web kmxgit skills www_kmx_io"
+pkg_scripts="postgresql fcgiwrap nginx redis rspamd exwm_smtp exwm_web kmxgit kmxmetrics skills www_kmx_io"

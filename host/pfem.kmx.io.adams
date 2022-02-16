@@ -42,6 +42,10 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o644)
+          (static-file "/etc/hosts"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -52,7 +56,5 @@
           #.(include "OpenBSD/backup")
           ;; users
           #.(include "user/dx")
-          ;; git
-          #.(include "git")
           ;; nginx
           #.(include "nginx"))

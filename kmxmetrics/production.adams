@@ -1,0 +1,33 @@
+(resource 'group "kmxmetrics"
+          :gid 3030
+          :ensure :present)
+(resource 'user "kmxmetrics"
+          :uid 3030
+          :gid 3030
+          :home "/home/kmxmetrics"
+          :shell "/bin/ksh"
+          :ensure :present)
+(resource 'directory "/home/kmxmetrics"
+          :owner "kmxmetrics"
+          :group "kmxmetrics"
+          :mode #o750)
+(resource 'directory "/var/www/kmxmetrics"
+          :owner "kmxmetrics"
+          :group "www"
+          :mode #o755
+          :ensure :present)
+(resource 'directory "/var/www/kmxmetrics/.well-known"
+          :owner "letsencrypt"
+          :group "www"
+          :mode #o755
+          :ensure :present)
+(resource 'file "/etc/nginx/available/kmxmetrics.conf"
+          :owner "root"
+          :group "wheel"
+          :mode #o644
+          :content (read-file "kmxmetrics/etc/nginx/available/kmxmetrics.conf"))
+(resource 'file "/etc/rc.d/kmxmetrics"
+          :owner "root"
+          :group "wheel"
+          :mode #o755
+          :content (read-file "kmxmetrics/etc/rc.d/kmxmetrics"))

@@ -1,0 +1,20 @@
+(resource 'directory "/var/www/kmxgit_test"
+          :owner "git_test"
+          :group "www"
+          :mode #o755
+          :ensure :present)
+(resource 'directory "/var/www/kmxgit_test/.well-known"
+          :owner "letsencrypt"
+          :group "www"
+          :mode #o755
+          :ensure :present)
+(resource 'file "/etc/nginx/available/kmxgit_test.conf"
+          :owner "root"
+          :group "wheel"
+          :mode #o644
+          :content (read-file "kmxgit/etc/nginx/available/kmxgit_test.conf"))
+(resource 'file "/etc/rc.d/kmxgit_test"
+          :owner "root"
+          :group "wheel"
+          :mode #o755
+          :content (read-file "kmxgit/etc/rc.d/kmxgit_test"))

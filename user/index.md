@@ -9,6 +9,7 @@
 ```
   vrizzt            5000
   judy              5001
+  zor               5002
   s0ca              5003
 ```
 
@@ -38,4 +39,5 @@
   exwm_web                3009
   kmxgit                  3010
   sdln_server             3020
+  kmxmetrics              3030
 ```
