@@ -1,3 +1,12 @@
+(resource 'group "git_test"
+          :gid 7002
+          :ensure :present)
+(resource 'user "git_test"
+          :uid 7002
+          :gid 7002
+          :home (homedir "git_test")
+          :shell "/usr/local/bin/git-auth"
+          :ensure :present)
 (resource 'directory "/var/www/kmxgit_test"
           :owner "git_test"
           :group "www"

@@ -36,6 +36,8 @@
           #.(include "tunnel")
           ;; users
           #.(include "user/dx")
+          #.(include "user/dx/forward-email")
+          #.(include "user/root/forward-email")
           #.(include "user/judy")
           #.(include "user/vrizzt")
           ;; git

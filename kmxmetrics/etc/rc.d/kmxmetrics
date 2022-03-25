@@ -1,7 +1,7 @@
 #!/bin/ksh
 
-daemon="/bin/sh /home/git/_/start_"
-daemon_user=git
+daemon="/bin/sh /home/kmxmetrics/start_"
+daemon_user=kmxmetrics
 rc_bg=YES
 
 . /etc/rc.d/rc.subr

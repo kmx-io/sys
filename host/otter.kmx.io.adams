@@ -26,6 +26,14 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o640)
+          (static-file "/etc/rspamd/local.d/multimap.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o640)
+          (static-file "/etc/rspamd/local.d/whitelist.sender.domain.map"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o640)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -36,6 +44,8 @@
           #.(include "OpenBSD/backup")
           ;; users
           #.(include "user/dx")
+          #.(include "user/dx/forward-email")
+          #.(include "user/root/forward-email")
           #.(include "user/zor")
           #.(include "user/vrizzt")
           ;; git
@@ -49,6 +59,7 @@
           ;; Sites
           #.(include "exwm")
           #.(include "kmxgit/production")
+          #.(include "kmxgit/test")
           #.(include "kmxmetrics/production")
           #.(include "sdln/production")
           #.(include "skills/production")
