@@ -23,6 +23,7 @@
   git               7000
   git-backup        7001
   git_test          7002
+  npm               7170
   postgres          7200
   tunnel            7800
   exwm_smtp         7900

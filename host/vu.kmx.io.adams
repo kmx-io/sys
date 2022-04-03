@@ -2,12 +2,10 @@
       (resource 'host "vu.kmx.io"
                 :user "root"
                 :hostname "vu"
-                :packages '("elixir"
-                            "erlang"
-                            "git"
+                :packages '("git"
                             "nginx"
+                            "postgresql-contrib"
                             "postgresql-server"
-                            "rebar21"
                             "rsync"
                             "ruby"
                             "sbcl")))
@@ -18,15 +16,7 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
-          (static-file "/etc/hostname.enc0"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
           (static-file "/etc/hostname.vio0"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.vio1"
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
@@ -38,8 +28,6 @@
           #.(include "OpenBSD/genpassword")
           ;; backup
           #.(include "OpenBSD/backup")
-          ;; tunnel
-          #.(include "tunnel")
           ;; users
           #.(include "user/dx")
           #.(include "user/judy")
@@ -76,8 +64,5 @@
                        :group "wheel"
                        :mode #o755)
           #.(include "www.kmx.io/production")
-          #.(include "mana/staging")
-          #.(include "seuldanslenoir/staging")
-          #.(include "skills/staging")
           #.(include "skills/production")
           #.(include "exwm"))

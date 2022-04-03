@@ -6,8 +6,9 @@
                             "erlang"
                             "git"
                             "nginx"
+                            "postgresql-contrib"
                             "postgresql-server"
-                            "rebar21"
+                            "rspamd"
                             "rsync"
                             "ruby"
                             "sbcl")))
@@ -63,4 +64,19 @@
           #.(include "kmxmetrics/production")
           #.(include "sdln/production")
           #.(include "skills/production")
-          #.(include "www.kmx.io/production"))
+          #.(include "www.kmx.io/production")
+          ;; otter.kmx.io
+          (resource 'directory "/var/www/otter"
+                    :owner "root"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (resource 'directory "/var/www/otter/.well-known"
+                    :owner "letsencrypt"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (static-file "/etc/nginx/available/otter.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644))
