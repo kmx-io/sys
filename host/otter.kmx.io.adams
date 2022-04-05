@@ -2,8 +2,7 @@
       (resource 'host "otter.kmx.io"
                 :user "root"
                 :hostname "otter"
-                :packages '("elixir"
-                            "erlang"
+                :packages '("emacs:no_x11"
                             "git"
                             "nginx"
                             "postgresql-contrib"
@@ -58,25 +57,25 @@
           ;; PostgreSQL
           #.(include "postgresql")
           ;; Sites
-          #.(include "exwm")
-          #.(include "kmxgit/production")
-          #.(include "kmxgit/test")
-          #.(include "kmxmetrics/production")
-          #.(include "sdln/production")
-          #.(include "skills/production")
+          #.(include "mail.kmx.io/production")
+          #.(include "git.kmx.io/production")
+          #.(include "git.kmx.io/test")
+          #.(include "metrics.kmx.io/production")
+          #.(include "sdln.kmx.io/production")
+          #.(include "skills.kmx.io/production")
           #.(include "www.kmx.io/production")
           ;; otter.kmx.io
-          (resource 'directory "/var/www/otter"
+          (resource 'directory "/var/www/otter.kmx.io"
                     :owner "root"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/otter/.well-known"
+          (resource 'directory "/var/www/otter.kmx.io/.well-known"
                     :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (static-file "/etc/nginx/available/otter.conf"
+          (static-file "/etc/nginx/available/otter.kmx.io.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o644))

@@ -1,16 +1,17 @@
 (setq *host* (resource 'host "reed.kmx.io"
-                       :user "root"))
+                       :user "root"
+                       :hostname "reed"
+                       :packages '("emacs:no_x11"
+                                   "git"
+                                   "nginx"
+                                   "postgresql-contrib"
+                                   "postgresql-server"
+                                   "rspamd"
+                                   "rsync"
+                                   "texinfo"
+                                   "texlive_texmf-full")))
 
 (resource 'host "reed.kmx.io"
-          :hostname "reed"
-          :packages '("emacs:no_x11"
-                      "elixir"
-                      "erlang"
-                      "git"
-                      "rebar21"
-                      "rsync"
-                      "texinfo"
-                      "texlive_texmf-full")
           ;; rc
           (static-file "/etc/rc.conf.local"
                        :owner "root"
@@ -32,17 +33,40 @@
           #.(include "OpenBSD/genpassword")
           ;; backup
           #.(include "OpenBSD/backup")
-          ;; tunnel
-          #.(include "tunnel")
           ;; users
           #.(include "user/dx")
-          #.(include "user/dx/forward-email")
-          #.(include "user/root/forward-email")
+;;          #.(include "user/dx/forward-email")
+;;          #.(include "user/root/forward-email")
           #.(include "user/judy")
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
-          ;; www
-          #.(include "nginx")
+          ;; letsencrypt
           #.(include "letsencrypt")
-          #.(include "kmxgit/production"))
+          ;; Nginx
+          #.(include "nginx")
+          ;; PostgreSQL
+          #.(include "postgresql")
+          #.(include "exwm")
+          #.(include "kmxgit/production")
+          #.(include "kmxgit/test")
+          #.(include "kmxmetrics/production")
+          #.(include "sdln/production")
+          #.(include "skills/production")
+          #.(include "www.kmx.io/production")
+          ;; reed.kmx.io
+          (resource 'directory "/var/www/reed"
+                    :owner "root"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (resource 'directory "/var/www/reed/.well-known"
+                    :owner "letsencrypt"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (static-file "/etc/nginx/available/reed.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644))
+

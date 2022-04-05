@@ -1,9 +1,0 @@
-#!/bin/ksh
-
-daemon="/bin/sh /home/mana-staging/start_"
-daemon_user=mana-staging
-rc_bg=YES
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1

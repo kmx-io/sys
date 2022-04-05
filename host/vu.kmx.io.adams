@@ -2,10 +2,12 @@
       (resource 'host "vu.kmx.io"
                 :user "root"
                 :hostname "vu"
-                :packages '("git"
+                :packages '("emacs:no_x11"
+                            "git"
                             "nginx"
                             "postgresql-contrib"
                             "postgresql-server"
+                            "rspamd"
                             "rsync"
                             "ruby"
                             "sbcl")))
@@ -35,10 +37,10 @@
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
-          ;; Nginx
-          #.(include "nginx")
           ;; letsencrypt
           #.(include "letsencrypt")
+          ;; Nginx
+          #.(include "nginx")
           ;; PostgreSQL
           #.(include "postgresql")
           ;; Deploy scripts
@@ -63,6 +65,25 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o755)
-          #.(include "www.kmx.io/production")
+          #.(include "exwm")
+          #.(include "kmxgit/production")
+          #.(include "kmxgit/test")
+          #.(include "kmxmetrics/production")
+          #.(include "sdln/production")
           #.(include "skills/production")
-          #.(include "exwm"))
+          #.(include "www.kmx.io/production")
+          ;; vu.kmx.io
+          (resource 'directory "/var/www/vu"
+                    :owner "root"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (resource 'directory "/var/www/vu/.well-known"
+                    :owner "letsencrypt"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (static-file "/etc/nginx/available/vu.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644))
