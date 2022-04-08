@@ -35,6 +35,7 @@
           #.(include "OpenBSD/backup")
           ;; users
           #.(include "user/dx")
+          #.(include "user/dx/x240")
 ;;          #.(include "user/dx/forward-email")
 ;;          #.(include "user/root/forward-email")
           #.(include "user/judy")
@@ -47,25 +48,26 @@
           #.(include "nginx")
           ;; PostgreSQL
           #.(include "postgresql")
-          #.(include "exwm")
-          #.(include "kmxgit/production")
-          #.(include "kmxgit/test")
-          #.(include "kmxmetrics/production")
-          #.(include "sdln/production")
-          #.(include "skills/production")
+          ;; Web services
+          #.(include "git.kmx.io/production")
+          #.(include "git.kmx.io/test")
+          #.(include "mail.kmx.io/production")
+          #.(include "metrics.kmx.io/production")
+          #.(include "sdln.kmx.io/production")
+          #.(include "skills.kmx.io/production")
           #.(include "www.kmx.io/production")
           ;; reed.kmx.io
-          (resource 'directory "/var/www/reed"
+          (resource 'directory "/var/www/reed.kmx.io"
                     :owner "root"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/reed/.well-known"
+          (resource 'directory "/var/www/reed.kmx.io/.well-known"
                     :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (static-file "/etc/nginx/available/reed.conf"
+          (static-file "/etc/nginx/available/reed.kmx.io.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o644))

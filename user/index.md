@@ -5,6 +5,11 @@
   dx                19256
 ```
 
+## privsep dx
+```
+  dx_x240           19240
+```
+
 ## Friends
 ```
   vrizzt            5000
