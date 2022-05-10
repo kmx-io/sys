@@ -14,6 +14,10 @@
 
 (resource 'host "otter.kmx.io"
           ;; rc
+          (static-file "/etc/sysctl.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
           (static-file "/etc/rc.conf.local"
                        :owner "root"
                        :group "wheel"
@@ -23,6 +27,14 @@
                        :group "wheel"
                        :mode #o600)
           (static-file "/etc/mail/smtpd.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o640)
+          (resource 'file "/etc/mail/dkim/kmx.io.key"
+                    :owner "root"
+                    :group "_rspamd"
+                    :mode #o440)
+          (static-file "/etc/rspamd/local.d/dkim_signing.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o640)
