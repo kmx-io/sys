@@ -5,12 +5,16 @@
                 :packages '("emacs:no_x11"
                             "git"
                             "nginx"
+                            "php-pgsql"
                             "postgresql-contrib"
                             "postgresql-server"
                             "rspamd"
                             "rsync"
                             "ruby"
-                            "sbcl")))
+                            "sbcl"
+                            "zabbix-agent"
+                            "zabbix-server:pgsql"
+                            "zabbix-web")))
 
 (resource 'host "otter.kmx.io"
           ;; rc
@@ -68,6 +72,9 @@
           #.(include "nginx")
           ;; PostgreSQL
           #.(include "postgresql")
+          ;; Zabbix
+          #.(include "zabbix/server")
+          #.(include "zabbix/agent")
           ;; Sites
           #.(include "mail.kmx.io/production")
           #.(include "git.kmx.io/production")
