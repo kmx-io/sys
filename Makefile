@@ -6,6 +6,9 @@ git: pfem vu otter
 mbp:
 	./mbp.kmx.io.adams
 
+os:
+	./os.kmx.io.adams
+
 otter:
 	./otter.kmx.io.adams
 
