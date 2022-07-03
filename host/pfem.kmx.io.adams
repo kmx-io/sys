@@ -98,8 +98,4 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o644)
-          ;; reed.kmx.io reverse proxy
-          (static-file "/etc/nginx/available/reed.kmx.io.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644))
+          #.(include "metrics.kmx.io/production"))
