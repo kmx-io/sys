@@ -1,2 +1,0 @@
-inet 51.210.208.8 netmask 0xffffff00 broadcast 51.210.208.255
-!route add default 51.210.208.254

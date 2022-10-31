@@ -1,4 +1,0 @@
-unbound_flags=
-xenodm_flags=
-
-pkg_scripts=redis postgresql

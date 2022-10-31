@@ -1,16 +1,11 @@
+## Copyright 2022 kmx.io
 
-all: reed vu pfem otter
+all: os reed pfem
 
-git: pfem vu otter
-
-mbp:
-	./mbp.kmx.io.adams
+git: os
 
 os:
 	./os.kmx.io.adams
-
-otter:
-	./otter.kmx.io.adams
 
 pfem:
 	./pfem.kmx.io.adams
@@ -18,13 +13,7 @@ pfem:
 reed:
 	./reed.kmx.io.adams
 
-t410:
-	./t410.kmx.io.adams
+vulon:
+	./vulon.kmx.io.adams
 
-t60:
-	./t60.kmx.io.adams
-
-vu:
-	./vu.kmx.io.adams
-
-.PHONY: all git mbp otter pfem reed t410 t60 vu
+.PHONY: all git pfem reed vulon

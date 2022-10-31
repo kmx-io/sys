@@ -1,2 +1,0 @@
-#!/bin/sh
-exec nohup /home/scripts/start_ &

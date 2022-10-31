@@ -1,4 +1,0 @@
-
-  ## Sidekiq
-  sidekiq:
-    log_format: json # (default is the original format)

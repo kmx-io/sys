@@ -1,3 +1,0 @@
-unbound_flags=
-
-pkg_scripts="nginx postgresql mana_staging seuldanslenoir_staging skills skills_staging"

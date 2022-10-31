@@ -1,5 +1,0 @@
-(resource 'host "ci.kmx.io"
-          :user "dx"
-          :hostname "ci"
-          #.(include "user/dx")
-          #.(include "user/vrizzt"))

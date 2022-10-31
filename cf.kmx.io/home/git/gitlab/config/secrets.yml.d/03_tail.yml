@@ -1,6 +1,0 @@
-
-development:
-  db_key_base: development
-
-test:
-  db_key_base: test
