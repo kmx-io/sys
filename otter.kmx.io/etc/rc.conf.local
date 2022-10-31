@@ -1,3 +1,0 @@
-resolvd_flags=NO
-unbound_flags=
-pkg_scripts="postgresql fcgiwrap nginx php74_fpm redis rspamd exwm_smtp git_kmx_io mail_kmx_io metrics_kmx_io skills_kmx_io www_kmx_io"

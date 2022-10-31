@@ -1,13 +1,12 @@
 (setq *host*
-      (resource 'host "otter.kmx.io"
+      (resource 'host "vulon.kmx.io"
                 :user "root"
-                :hostname "otter"
+                :hostname "os"
                 :packages '("emacs:no_x11"
-                            "git"
                             "nginx"
-                            "php-pgsql"
                             "postgresql-contrib"
                             "postgresql-server"
+                            "redis"
                             "rspamd"
                             "rsync"
                             "ruby"
@@ -16,7 +15,7 @@
                             "zabbix-server:pgsql"
                             "zabbix-web")))
 
-(resource 'host "otter.kmx.io"
+(resource 'host "vulon.kmx.io"
           ;; rc
           (static-file "/etc/sysctl.conf"
                        :owner "root"
@@ -34,7 +33,7 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o640)
-          (resource 'file "/etc/mail/dkim/kmx.io.key"
+          (resource 'file "/etc/mail/dkim/vulon.kmx.io.key"
                     :owner "root"
                     :group "_rspamd"
                     :mode #o440)
@@ -62,8 +61,6 @@
           #.(include "user/dx")
           #.(include "user/dx/forward-email")
           #.(include "user/root/forward-email")
-          #.(include "user/zor")
-          #.(include "user/vrizzt")
           ;; git
           #.(include "git")
           ;; letsencrypt
@@ -72,29 +69,21 @@
           #.(include "nginx")
           ;; PostgreSQL
           #.(include "postgresql")
-          ;; Zabbix
-          #.(include "zabbix/server")
-          #.(include "zabbix/agent")
           ;; Sites
-          #.(include "mail.kmx.io/production")
-          #.(include "git.kmx.io/production")
-          #.(include "git.kmx.io/test")
           #.(include "metrics.kmx.io/production")
-          #.(include "sdln.kmx.io/production")
-          #.(include "skills.kmx.io/production")
           #.(include "www.kmx.io/production")
-          ;; otter.kmx.io
-          (resource 'directory "/var/www/otter.kmx.io"
+          ;; vulon.kmx.io
+          (resource 'directory "/var/www/vulon.kmx.io"
                     :owner "root"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/otter.kmx.io/.well-known"
+          (resource 'directory "/var/www/vulon.kmx.io/.well-known"
                     :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (static-file "/etc/nginx/available/otter.kmx.io.conf"
+          (static-file "/etc/nginx/available/vulon.kmx.io.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o644))

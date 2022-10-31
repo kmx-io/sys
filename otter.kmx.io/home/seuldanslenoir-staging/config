@@ -1,7 +1,0 @@
-#!/bin/sh
-
-export SITE=seuldanslenoir
-export BRANCH=staging
-export RAILS_ENV=staging
-export PORT=15002
-export RUBY_VER=26
