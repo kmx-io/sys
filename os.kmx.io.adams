@@ -1,7 +1,5 @@
 #!/usr/local/bin/adams --script
 
-(asdf:load-system :adams)
-
 (in-package :adams-user)
 
 (load "OpenBSD/reload.lisp")
