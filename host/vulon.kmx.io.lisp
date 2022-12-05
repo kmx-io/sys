@@ -9,11 +9,7 @@
                             "redis"
                             "rspamd"
                             "rsync"
-                            "ruby"
-                            "sbcl"
-                            "zabbix-agent"
-                            "zabbix-server:pgsql"
-                            "zabbix-web")))
+                            "ruby")))
 
 (resource 'host "vulon.kmx.io"
           ;; rc
@@ -33,10 +29,10 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o640)
-          (resource 'file "/etc/mail/dkim/vulon.kmx.io.key"
-                    :owner "root"
-                    :group "_rspamd"
-                    :mode #o440)
+          #+nil(resource 'file "/etc/mail/dkim/vulon.kmx.io.key"
+                         :owner "root"
+                         :group "_rspamd"
+                         :mode #o440)
           (static-file "/etc/rspamd/local.d/dkim_signing.conf"
                        :owner "root"
                        :group "wheel"
@@ -68,9 +64,8 @@
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL
-          #.(include "postgresql")
+          ;;#.(include "postgresql")
           ;; Sites
-          #.(include "metrics.kmx.io/production")
           #.(include "www.kmx.io/production")
           ;; vulon.kmx.io
           (resource 'directory "/var/www/vulon.kmx.io"
