@@ -1,21 +1,16 @@
 (setq *host*
-      (resource 'host "vulon.kmx.io"
+      (resource 'host "oaa.kmx.io"
                 :user "root"
                 :hostname "os"
                 :packages '("emacs:no_x11"
                             "nginx"
                             "postgresql-contrib"
                             "postgresql-server"
-                            "redis"
                             "rspamd"
                             "rsync"
-                            "ruby"
-                            "sbcl"
-                            "zabbix-agent"
-                            "zabbix-server:pgsql"
-                            "zabbix-web")))
+                            "ruby")))
 
-(resource 'host "vulon.kmx.io"
+(resource 'host "oaa.kmx.io"
           ;; rc
           (static-file "/etc/sysctl.conf"
                        :owner "root"
@@ -25,7 +20,7 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
-          (static-file "/etc/hostname.ix0"
+          (static-file "/etc/hostname.vio0"
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
@@ -33,10 +28,10 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o640)
-          (resource 'file "/etc/mail/dkim/vulon.kmx.io.key"
-                    :owner "root"
-                    :group "_rspamd"
-                    :mode #o440)
+          ;(resource 'file "/etc/mail/dkim/oaa.kmx.io.key"
+          ;          :owner "root"
+          ;          :group "_rspamd"
+          ;          :mode #o440)
           (static-file "/etc/rspamd/local.d/dkim_signing.conf"
                        :owner "root"
                        :group "wheel"
@@ -68,22 +63,22 @@
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL
-          #.(include "postgresql")
+          ;;#.(include "postgresql")
           ;; Sites
           #.(include "metrics.kmx.io/production")
           #.(include "www.kmx.io/production")
-          ;; vulon.kmx.io
-          (resource 'directory "/var/www/vulon.kmx.io"
+          ;; oaa.kmx.io
+          (resource 'directory "/var/www/oaa.kmx.io"
                     :owner "root"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/vulon.kmx.io/.well-known"
+          (resource 'directory "/var/www/oaa.kmx.io/.well-known"
                     :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (static-file "/etc/nginx/available/vulon.kmx.io.conf"
+          (static-file "/etc/nginx/available/oaa.kmx.io.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o644))
