@@ -1,7 +1,7 @@
-OpenBSD 7.2 (GENERIC) #2: Thu Nov 24 23:52:58 MST 2022
+OpenBSD 7.2 (GENERIC) #4: Mon Dec 12 06:05:18 MST 2022
     root@syspatch-72-amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC
 real mem = 2130558976 (2031MB)
-avail mem = 2048745472 (1953MB)
+avail mem = 2048757760 (1953MB)
 random: good seed from bootblocks
 mpath0 at root
 scsibus0 at mpath0: 256 targets
@@ -16,7 +16,7 @@ acpi0: wakeup devices
 acpitimer0 at acpi0: 3579545 Hz, 24 bits
 acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
 cpu0 at mainbus0: apid 0 (boot processor)
-cpu0: Intel Xeon Processor (Skylake, IBRS), 2594.60 MHz, 06-55-04
+cpu0: Intel Xeon Processor (Skylake, IBRS), 2594.49 MHz, 06-55-04
 cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,MMX,FXSR,SSE,SSE2,SSE3,PCLMUL,SSSE3,FMA3,CX16,PCID,SSE4.1,SSE4.2,x2APIC,MOVBE,POPCNT,DEADLINE,AES,XSAVE,AVX,F16C,RDRAND,HV,NXE,PAGE1GB,RDTSCP,LONG,LAHF,ABM,FSGSBASE,BMI1,AVX2,SMEP,BMI2,ERMS,INVPCID,AVX512F,AVX512DQ,CLWB,AVX512CD,AVX512BW,AVX512VL,PKU,IBRS,IBPB,SSBD,ARAT,XSAVEOPT,MELTDOWN
 cpu0: 32KB 64b/line 8-way D-cache, 32KB 64b/line 8-way I-cache, 4MB 64b/line 16-way L2 cache, 16MB 64b/line 16-way L3 cache
 cpu0: smt 0, core 0, package 0

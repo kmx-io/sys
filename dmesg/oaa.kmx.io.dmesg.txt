@@ -1,7 +1,7 @@
-OpenBSD 7.2 (GENERIC) #2: Thu Nov 24 23:52:58 MST 2022
+OpenBSD 7.2 (GENERIC) #4: Mon Dec 12 06:05:18 MST 2022
     root@syspatch-72-amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC
 real mem = 2130681856 (2031MB)
-avail mem = 2048872448 (1953MB)
+avail mem = 2048868352 (1953MB)
 random: good seed from bootblocks
 mpath0 at root
 scsibus0 at mpath0: 256 targets

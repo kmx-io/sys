@@ -1,7 +1,7 @@
-OpenBSD 7.2 (GENERIC.MP) #2: Thu Nov 24 23:54:39 MST 2022
+OpenBSD 7.2 (GENERIC.MP) #4: Mon Dec 12 06:06:42 MST 2022
     root@syspatch-72-amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
 real mem = 4276551680 (4078MB)
-avail mem = 4129533952 (3938MB)
+avail mem = 4129550336 (3938MB)
 random: good seed from bootblocks
 mpath0 at root
 scsibus0 at mpath0: 256 targets
@@ -24,7 +24,7 @@ mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges
 cpu0: apic clock running at 200MHz
 cpu0: mwait min=64, max=64, C-substates=0.2, IBE
 cpu1 at mainbus0: apid 1 (application processor)
-cpu1: Intel(R) Core(TM)2 CPU 6400 @ 2.13GHz, 1600.10 MHz, 06-0f-02
+cpu1: Intel(R) Core(TM)2 CPU 6400 @ 2.13GHz, 1600.09 MHz, 06-0f-02
 cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,NXE,LONG,LAHF,PERF,SENSOR,MELTDOWN
 cpu1: 32KB 64b/line 8-way D-cache, 32KB 64b/line 8-way I-cache, 2MB 64b/line 8-way L2 cache
 cpu1: smt 0, core 1, package 0
@@ -131,7 +131,7 @@ wd3(pciide1:1:1): using PIO mode 4, Ultra-DMA mode 6
 ichiic0 at pci0 dev 31 function 3 "Intel 82801JI SMBus" rev 0x00: apic 2 int 18
 iic0 at ichiic0
 iic0: addr 0x1e 01=01 02=01 11=01 12=01 21=01 22=01 31=01 32=01 words 00=0001 01=0101 02=0100 03=0000 04=0000 05=0000 06=0000 07=0000
-iic0: addr 0x20 01=80 02=17 03=7f 10=00 19=b0 20=20 21=00 25=20 26=b2 38=74 39=03 4a=64 6a=2c 78=02 79=08 7a=00 7b=00 7e=82 80=00 8b=2f 8c=64 96=23 99=41 9a=98 9b=01 d0=00 d1=03 d2=72 d3=72 d4=03 d5=02 d6=01 d7=a0 d8=75 d9=00 da=00 db=00 dc=00 dd=00 de=00 df=19 e0=00 e1=00 e2=10 e3=10 e4=10 e5=10 e6=10 e7=10 e8=10 e9=10 ea=10 ec=07 ee=00 f1=07 f5=02 f6=02 f9=00 fa=00 fb=50 words 00=ffff 01=8037 02=1766 03=7fff 04=ffff 05=ffff 06=ffff 07=ffff
+iic0: addr 0x20 01=80 02=17 03=7f 10=00 19=b0 20=20 21=00 25=20 26=b2 38=74 39=03 4a=64 6a=2c 78=02 79=08 7a=00 7b=00 7e=82 80=00 8b=2f 8c=56 96=10 99=41 9a=98 9b=01 d0=00 d1=03 d2=72 d3=72 d4=03 d5=02 d6=01 d7=a0 d8=75 d9=00 da=00 db=00 dc=00 dd=00 de=00 df=19 e0=00 e1=00 e2=10 e3=10 e4=10 e5=10 e6=10 e7=10 e8=10 e9=10 ea=10 ec=07 ee=00 f1=07 f5=02 f6=02 f9=00 fa=00 fb=50 words 00=ffff 01=8037 02=1766 03=7fff 04=ffff 05=ffff 06=ffff 07=ffff
 spdmem0 at iic0 addr 0x50: 2GB DDR3 SDRAM PC3-10600
 spdmem1 at iic0 addr 0x52: 2GB DDR3 SDRAM PC3-10600
 pciide2 at pci0 dev 31 function 5 "Intel 82801JI SATA" rev 0x00: DMA, channel 0 wired to native-PCI, channel 1 wired to native-PCI
@@ -175,6 +175,6 @@ sd2 at scsibus4 targ 3 lun 0: <OPENBSD, SR RAID 1, 006>
 sd2: 3815447MB, 512 bytes/sector, 7814036576 sectors
 root on sd0a (a25aa9f1dd9ac71b.a) swap on sd0b dump on sd0b
 radeondrm0: RV710
-radeondrm0: 1024x768, 32bpp
+radeondrm0: 1280x1024, 32bpp
 wsdisplay0 at radeondrm0 mux 1: console (std, vt100 emulation), using wskbd0
 wsdisplay0: screen 1-5 added (std, vt100 emulation)
