@@ -1,9 +1,0 @@
-#!/bin/ksh
-
-daemon="/bin/sh /home/sdln/start_"
-daemon_user=sdln
-rc_bg=YES
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1
