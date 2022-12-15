@@ -1,4 +1,4 @@
-OpenBSD 7.2 (GENERIC.MP) #2: Thu Nov 24 23:54:39 MST 2022
+OpenBSD 7.2 (GENERIC.MP) #4: Mon Dec 12 06:06:42 MST 2022
     root@syspatch-72-amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
 real mem = 4092325888 (3902MB)
 avail mem = 3950911488 (3767MB)
@@ -16,7 +16,7 @@ acpi0: wakeup devices UAR1(S4) P0P1(S4) P0P2(S4) P0P3(S4) P0P4(S4) GBE_(S4) PXE_
 acpitimer0 at acpi0: 3579545 Hz, 24 bits
 acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
 cpu0 at mainbus0: apid 0 (boot processor)
-cpu0: Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz, 3093.18 MHz, 06-2a-07
+cpu0: Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz, 3093.17 MHz, 06-2a-07
 cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,PCID,SSE4.1,SSE4.2,POPCNT,DEADLINE,XSAVE,AVX,NXE,RDTSCP,LONG,LAHF,PERF,ITSC,MD_CLEAR,IBRS,IBPB,STIBP,L1DF,SSBD,SENSOR,ARAT,XSAVEOPT,MELTDOWN
 cpu0: 32KB 64b/line 8-way D-cache, 32KB 64b/line 8-way I-cache, 256KB 64b/line 8-way L2 cache, 3MB 64b/line 12-way L3 cache
 cpu0: smt 0, core 0, package 0
@@ -34,7 +34,7 @@ cpu2: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CF
 cpu2: 32KB 64b/line 8-way D-cache, 32KB 64b/line 8-way I-cache, 256KB 64b/line 8-way L2 cache, 3MB 64b/line 12-way L3 cache
 cpu2: smt 1, core 0, package 0
 cpu3 at mainbus0: apid 3 (application processor)
-cpu3: Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz, 3093.00 MHz, 06-2a-07
+cpu3: Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz, 3092.99 MHz, 06-2a-07
 cpu3: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,PCID,SSE4.1,SSE4.2,POPCNT,DEADLINE,XSAVE,AVX,NXE,RDTSCP,LONG,LAHF,PERF,ITSC,MD_CLEAR,IBRS,IBPB,STIBP,L1DF,SSBD,SENSOR,ARAT,XSAVEOPT,MELTDOWN
 cpu3: 32KB 64b/line 8-way D-cache, 32KB 64b/line 8-way I-cache, 256KB 64b/line 8-way L2 cache, 3MB 64b/line 12-way L3 cache
 cpu3: smt 1, core 1, package 0
@@ -100,11 +100,6 @@ wskbd0 at pckbd0: console keyboard
 pcppi0 at isa0 port 0x61
 spkr0 at pcppi0
 uhub2 at uhub0 port 1 configuration 1 interface 0 "Intel Rate Matching Hub" rev 2.00/0.00 addr 2
-umass0 at uhub2 port 4 configuration 1 interface 0 "Kingston DataTraveler 2.0" rev 2.00/1.10 addr 3
-umass0: using SCSI over Bulk-Only
-scsibus2 at umass0: 2 targets, initiator 0
-sd1 at scsibus2 targ 1 lun 0: <Kingston, DataTraveler 2.0, PMAP> removable serial.09306545B180297A97F8
-sd1: 29532MB, 512 bytes/sector, 60481536 sectors
 uhub3 at uhub1 port 1 configuration 1 interface 0 "Intel Rate Matching Hub" rev 2.00/0.00 addr 2
 uhidev0 at uhub3 port 3 configuration 1 interface 0 "vendor 0x13ba Barcode Reader" rev 1.10/0.01 addr 3
 uhidev0: iclass 3/1
@@ -141,3 +136,9 @@ scsibus4 at softraid0: 256 targets
 root on sd0a (906dfd897560a254.a) swap on sd0b dump on sd0b
 inteldrm0: 1920x1200, 32bpp
 wsdisplay0 at inteldrm0 mux 1: console (std, vt100 emulation), using wskbd0
+wskbd1: connecting to wsdisplay0
+wskbd2: connecting to wsdisplay0
+wskbd3: connecting to wsdisplay0
+wskbd4: connecting to wsdisplay0
+wskbd5: connecting to wsdisplay0
+wsdisplay0: screen 1-5 added (std, vt100 emulation)
