@@ -1,34 +1,32 @@
-(setq *host* (resource 'host "reed.kmx.io"
-                       :user "root"
-                       :hostname "reed"
-                       :packages '("emacs:no_x11"
-                                   "git"
-                                   "nginx"
-                                   "postgresql-contrib"
-                                   "postgresql-server"
-                                   "rspamd"
-                                   "rsync"
-                                   "texinfo"
-                                   "texlive_texmf-full")))
+(setq *host*
+      (resource 'host "bim.kmx.io"
+                :user "root"
+                :hostname "bim"
+                :packages '("git"
+                            "libgit2"
+                            "nginx"
+                            "postgresql-contrib"
+                            "postgresql-server"
+                            "rsync")))
 
-(resource 'host "reed.kmx.io"
+(resource 'host "bim.kmx.io"
           ;; rc
+          (static-file "/etc/sysctl.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
           (static-file "/etc/rc.conf.local"
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
-          (static-file "/etc/hostname.em0"
+          (static-file "/etc/hostname.rge0"
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
-          (static-file "/etc/hostname.em1"
+          (static-file "/etc/mygate"
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
-          (static-file "/etc/mpd.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o640)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -39,11 +37,8 @@
           #.(include "OpenBSD/backup")
           ;; users
           #.(include "user/dx")
-          #.(include "user/dx/x240")
-;;          #.(include "user/dx/forward-email")
-;;          #.(include "user/root/forward-email")
-;;          #.(include "user/judy")
-          #.(include "user/vrizzt")
+          #.(include "user/dx/forward-email")
+          #.(include "user/root/forward-email")
           ;; git
           #.(include "git")
           ;; letsencrypt
@@ -52,26 +47,23 @@
           #.(include "nginx")
           ;; PostgreSQL
           #.(include "postgresql")
-          ;; Web services
+          ;; Sites
           #.(include "git.kmx.io/production")
           #.(include "git.kmx.io/test")
-          #.(include "mail.kmx.io/production")
           #.(include "metrics.kmx.io/production")
-          #.(include "skills.kmx.io/production")
           #.(include "www.kmx.io/production")
-          ;; reed.kmx.io
-          (resource 'directory "/var/www/reed.kmx.io"
+          ;; bim.kmx.io
+          (resource 'directory "/var/www/bim.kmx.io"
                     :owner "root"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/reed.kmx.io/.well-known"
+          (resource 'directory "/var/www/bim.kmx.io/.well-known"
                     :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (static-file "/etc/nginx/available/reed.kmx.io.conf"
+          (static-file "/etc/nginx/available/bim.kmx.io.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o644))
-

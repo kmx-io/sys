@@ -1,18 +1,18 @@
-(resource 'group "kmxmetrics"
+(resource 'group "metrics_kmx_io"
           :gid 3030
           :ensure :present)
-(resource 'user "kmxmetrics"
+(resource 'user "metrics_kmx_io"
           :uid 3030
           :gid 3030
-          :home "/home/kmxmetrics"
+          :home "/home/metrics_kmx_io"
           :shell "/bin/ksh"
           :ensure :present)
-(resource 'directory "/home/kmxmetrics"
-          :owner "kmxmetrics"
-          :group "kmxmetrics"
+(resource 'directory "/home/metrics_kmx_io"
+          :owner "metrics_kmx_io"
+          :group "metrics_kmx_io"
           :mode #o750)
 (resource 'directory "/var/www/metrics.kmx.io"
-          :owner "kmxmetrics"
+          :owner "metrics_kmx_io"
           :group "www"
           :mode #o755
           :ensure :present)

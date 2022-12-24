@@ -1,0 +1,3 @@
+resolvd_flags=NO
+unbound_flags=
+pkg_scripts="postgresql fcgiwrap nginx git_kmx_io metrics_kmx_io www_kmx_io"

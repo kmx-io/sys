@@ -3,7 +3,10 @@
 
 all: os reed pfem vulon oaa
 
-git: os
+git: os bim
+
+bim:
+	./bim.kmx.io.lisp
 
 oaa:
 	./oaa.kmx.io.lisp

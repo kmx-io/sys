@@ -83,7 +83,6 @@
           #.(include "git.kmx.io/production")
           #.(include "git.kmx.io/test")
           #.(include "metrics.kmx.io/production")
-          #.(include "sdln.kmx.io/production")
           #.(include "skills.kmx.io/production")
           #.(include "www.kmx.io/production")
           ;; os.kmx.io
