@@ -8,5 +8,16 @@
           :mode #o700)
 (resource 'directory "/var/www/acme"
           :owner "root"
-          :group "wheel"
+          :group "daemon"
           :mode #o755)
+(resource 'directory "/var/www/acme/.well-known"
+          :owner "root"
+          :group "daemon"
+          :mode #o755)
+(resource 'symlink "/var/www/acme/.well-known/acme-challenge"
+          :target ".."
+          :ensure :present)
+(resource 'user "letsencrypt"
+          :ensure :absent)
+(resource 'group "letsencrypt"
+          :ensure :absent)

@@ -3,11 +3,6 @@
           :group "www"
           :mode #o755
           :ensure :present)
-(resource 'directory "/var/www/git.kmx.io/.well-known"
-          :owner "letsencrypt"
-          :group "www"
-          :mode #o755
-          :ensure :present)
 (resource 'file "/etc/nginx/available/git.kmx.io.conf"
           :owner "root"
           :group "wheel"

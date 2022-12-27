@@ -8,10 +8,11 @@
              :owner "root"
              :group "www"
              :mode #o640)
-(static-file "/etc/nginx/ssl.conf"
-             :owner "root"
-             :group "www"
-             :mode #o640)
+(resource 'file "/etc/nginx/ssl.conf"
+          :owner "root"
+          :group "www"
+          :mode #o640
+          :content (read-file "nginx/etc/nginx/ssl.conf"))
 (resource 'directory "/etc/nginx/enabled"
           :owner "root"
           :group "www"

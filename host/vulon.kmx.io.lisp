@@ -59,8 +59,8 @@
           #.(include "user/root/forward-email")
           ;; git
           #.(include "git")
-          ;; letsencrypt
-          #.(include "letsencrypt")
+          ;; ssl
+          #.(include "ssl")
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL
@@ -70,11 +70,6 @@
           ;; vulon.kmx.io
           (resource 'directory "/var/www/vulon.kmx.io"
                     :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (resource 'directory "/var/www/vulon.kmx.io/.well-known"
-                    :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)

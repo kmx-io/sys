@@ -21,11 +21,6 @@
           :group "www"
           :mode #o755
           :ensure :present)
-(resource 'directory "/var/www/www.kmx.io/.well-known"
-          :owner "letsencrypt"
-          :group "www"
-          :mode #o755
-          :ensure :present)
 (resource 'file "/etc/nginx/available/www.kmx.io.conf"
           :owner "root"
           :group "www"

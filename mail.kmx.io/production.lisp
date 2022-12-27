@@ -29,11 +29,6 @@
           :group "www"
           :mode #o755
           :ensure :present)
-(resource 'directory "/var/www/mail.kmx.io/.well-known"
-          :owner "letsencrypt"
-          :group "www"
-          :mode #o755
-          :ensure :present)
 (resource 'file "/etc/nginx/available/mail.kmx.io.conf"
           :owner "root"
           :group "wheel"

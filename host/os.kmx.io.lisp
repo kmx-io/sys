@@ -21,10 +21,6 @@
 
 (resource 'host "os.kmx.io"
           ;; rc
-          (static-file "/etc/acme-client.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
           (static-file "/etc/sysctl.conf"
                        :owner "root"
                        :group "wheel"
@@ -73,8 +69,8 @@
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
-          ;; letsencrypt
-          #.(include "letsencrypt")
+          ;; ssl
+          #.(include "ssl")
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL
@@ -92,11 +88,6 @@
           ;; os.kmx.io
           (resource 'directory "/var/www/os.kmx.io"
                     :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (resource 'directory "/var/www/os.kmx.io/.well-known"
-                    :owner "letsencrypt"
                     :group "www"
                     :mode #o755
                     :ensure :present)

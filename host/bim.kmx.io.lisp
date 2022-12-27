@@ -52,11 +52,6 @@
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/bim.kmx.io/.well-known"
-                    :owner "letsencrypt"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
           (static-file "/etc/nginx/available/bim.kmx.io.conf"
                        :owner "root"
                        :group "wheel"

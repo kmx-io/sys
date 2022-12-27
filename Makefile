@@ -1,7 +1,7 @@
 ## kmx.io/sys
 ## Copyright 2022 kmx.io
 
-all: os reed pfem vulon oaa
+all: oaa vulon pfem bim os reed
 
 git: os bim
 
