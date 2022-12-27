@@ -1,6 +1,5 @@
 192.168.1.10    redminote10 redminote10.kmx.io
 192.168.1.20    borg borg.kmx.io
-192.168.1.21    bim bim.kmx.io
 192.168.1.22    tab tab.kmx.io
 192.168.1.23    twice twice.kmx.io
 192.168.1.26    htc626-1 htc626-1.kmx.io
@@ -21,4 +20,5 @@
 192.168.1.86    s86 s86.kmx.io
 192.168.1.100   reed reed.kmx.io
 192.168.1.101   beetle beetle.kmx.io
+192.168.1.102   bim bim.kmx.io
 192.168.1.250   pfem pfem.kmx.io
