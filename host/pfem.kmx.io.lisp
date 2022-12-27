@@ -45,7 +45,8 @@
           (static-file "/etc/dhcpd.conf"
                        :owner "root"
                        :group "wheel"
-                       :mode #o644)
+                       :mode #o644
+                       :after #'reload-dhcpd)
           (static-file "/etc/unbound.conf"
                        :owner "root"
                        :group "wheel"
@@ -76,8 +77,6 @@
           #.(include "user/root/forward-email")
           ;; nginx
           #.(include "nginx")
-          ;; ssl
-          #.(include "letsencrypt")
           ;; s.kmx.io pfem.kmx.io
           (resource 'directory "/var/www/pfem.kmx.io"
                     :owner "root"

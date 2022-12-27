@@ -3,6 +3,9 @@
                        :hostname "reed"
                        :packages '("emacs:no_x11"
                                    "git"
+                                   "icecast"
+                                   "lame"
+                                   "mpd"
                                    "nginx"
                                    "postgresql-contrib"
                                    "postgresql-server"
@@ -25,10 +28,16 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
+          (static-file "/var/icecast/icecast.xml"
+                       :owner "root"
+                       :group "_icecast"
+                       :mode #o640
+                       :after #'reload-icecast)
           (static-file "/etc/mpd.conf"
                        :owner "root"
                        :group "wheel"
-                       :mode #o640)
+                       :mode #o640
+                       :after #'reload-mpd)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -46,8 +55,6 @@
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
-          ;; letsencrypt
-          #.(include "letsencrypt")
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL

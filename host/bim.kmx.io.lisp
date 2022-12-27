@@ -23,10 +23,6 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o600)
-          (static-file "/etc/mygate"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
           ;; pf
           #.(include "pf")
           ;; sshd
@@ -41,8 +37,6 @@
           #.(include "user/root/forward-email")
           ;; git
           #.(include "git")
-          ;; letsencrypt
-          #.(include "letsencrypt")
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL
