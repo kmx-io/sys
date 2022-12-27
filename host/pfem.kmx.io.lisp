@@ -6,6 +6,10 @@
 
 (resource 'host "pfem.kmx.io"
           ;; rc
+          (static-file "/etc/acme-client.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
           (static-file "/etc/rc.conf.local"
                        :owner "root"
                        :group "wheel"
@@ -80,21 +84,25 @@
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (resource 'directory "/var/www/pfem.kmx.io/.well-known"
-                    :owner "letsencrypt"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (resource 'directory "/var/www/pfem.kmx.io/radio"
+          (static-file "/etc/nginx/available/pfem.kmx.io.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o644)
+          (resource 'directory "/var/www/s.kmx.io"
                     :owner "root"
                     :group "www"
                     :mode #o755
                     :ensure :present)
-          (static-file "/var/www/pfem.kmx.io/radio/index.html"
+          (resource 'directory "/var/www/s.kmx.io/radio"
+                    :owner "root"
+                    :group "www"
+                    :mode #o755
+                    :ensure :present)
+          (static-file "/var/www/s.kmx.io/radio/index.html"
                        :owner "root"
                        :group "www"
                        :mode #o644)
-          (static-file "/etc/nginx/available/pfem.kmx.io.conf"
+          (static-file "/etc/nginx/available/s.kmx.io.conf"
                        :owner "root"
                        :group "wheel"
                        :mode #o644)

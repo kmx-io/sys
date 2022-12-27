@@ -35,3 +35,19 @@
           :group "wheel"
           :mode #o755
           :ensure :present)
+(resource 'directory "/var/www/acme"
+          :owner "root"
+          :group "daemon"
+          :mode #o755
+          :ensure :present)
+(resource 'directory "/var/www/acme/.well-known"
+          :owner "root"
+          :group "daemon"
+          :mode #o755
+          :ensure :present)
+(resource 'symlink "/var/www/acme/.well-known/acme-challenge"
+          :target ".."
+          :owner "root"
+          :group "daemon"
+          :mode #o755
+          :ensure :present)

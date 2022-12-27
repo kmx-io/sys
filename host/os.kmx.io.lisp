@@ -21,6 +21,10 @@
 
 (resource 'host "os.kmx.io"
           ;; rc
+          (static-file "/etc/acme-client.conf"
+                       :owner "root"
+                       :group "wheel"
+                       :mode #o600)
           (static-file "/etc/sysctl.conf"
                        :owner "root"
                        :group "wheel"

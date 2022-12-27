@@ -56,17 +56,13 @@
           :group "git-backup"
           :mode #o640
           :content (read-file "git/home/git-backup/.ssh/authorized_keys"))
-(resource 'file "/usr/local/bin/backup_git@vu.kmx.io"
+(resource 'directory (str (homedir "git-backup") "/.bin")
+          :owner "git-backup"
+          :group "git-backup"
+          :mode #o700
+          :ensure :present)
+(resource 'file (str (homedir "git-backup") "/.bin/backup")
           :owner "root"
           :group "git-backup"
-          :mode #o755
-          :content (etypecase (host-os *host*)
-                     (os-darwin (read-file "git/usr/local/bin/backup_git@vu.kmx.io_darwin"))
-                     (os (read-file "git/usr/local/bin/backup_git@vu.kmx.io"))))
-(resource 'file "/usr/local/bin/backup_git@otter.kmx.io"
-          :owner "root"
-          :group "git-backup"
-          :mode #o755
-          :content (etypecase (host-os *host*)
-                     (os-darwin (read-file "git/usr/local/bin/backup_git@otter.kmx.io_darwin"))
-                     (os (read-file "git/usr/local/bin/backup_git@otter.kmx.io"))))
+          :mode #o750
+          :content (read-file "git/home/git-backup/.bin/backup"))
