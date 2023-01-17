@@ -5,104 +5,24 @@
                 :packages '("nginx")))
 
 (resource 'host "pfem.kmx.io"
+          #.(include "OpenBSD/host")
           ;; rc
-          (static-file "/etc/acme-client.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/rc.conf.local"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.em0"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.em1"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.em2"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.em3"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.re0"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.re1"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.re2"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/dhcpd.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644
-                       :after #'reload-dhcpd)
-          (static-file "/etc/unbound.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
-          (static-file "/etc/hosts"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
-          (static-file "/etc/sysctl.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o640)
-          (static-file "/etc/login.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o640)
-          ;; pf
-          #.(include "pf")
-          ;; sshd
-          #.(include "sshd")
-          ;; genpassword
-          #.(include "OpenBSD/genpassword")
-          ;; backup
-          #.(include "OpenBSD/backup")
+          (static-etc-file "/etc/hostname.em0")
+          (static-etc-file "/etc/hostname.em1")
+          (static-etc-file "/etc/hostname.em2")
+          (static-etc-file "/etc/hostname.re0")
+          (static-etc-file "/etc/hostname.re1")
+          (static-etc-file "/etc/hostname.re2")
+          (static-etc-file "/etc/dhcpd.conf"
+                           :after #'reload-dhcpd)
+          (static-etc-file "/etc/unbound.conf")
+          (static-etc-file "/etc/hosts"
+                           :mode #o644)
+          (static-etc-file "/etc/login.conf")
           ;; users
           #.(include "user/dx")
           #.(include "user/dx/forward-email")
           #.(include "user/root/forward-email")
           ;; nginx
           #.(include "nginx")
-          ;; s.kmx.io pfem.kmx.io
-          (resource 'directory "/var/www/pfem.kmx.io"
-                    :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (static-file "/etc/nginx/available/pfem.kmx.io.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
-          (resource 'directory "/var/www/s.kmx.io"
-                    :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (resource 'directory "/var/www/s.kmx.io/radio"
-                    :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (static-file "/var/www/s.kmx.io/radio/index.html"
-                       :owner "root"
-                       :group "www"
-                       :mode #o644)
-          (static-file "/etc/nginx/available/s.kmx.io.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644)
           #.(include "metrics.kmx.io/production"))

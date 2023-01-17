@@ -1,4 +1,7 @@
+bootparamd_flags=-s
 dhcpd_flags=em1 em2 em3
+rarpd_flags=
 resolvd_flags=NO
+tftpd_flags=
 unbound_flags=
 pkg_scripts=nginx

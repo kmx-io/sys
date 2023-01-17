@@ -2,7 +2,7 @@
 
 (in-package :cl-unix-cybernetics-user)
 
-(load "OpenBSD/reload.lisp")
+(load "OpenBSD/defs")
 
 #.(include "host/vulon.kmx.io")
 

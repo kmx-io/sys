@@ -20,23 +20,11 @@
                             "zabbix-web")))
 
 (resource 'host "os.kmx.io"
+          #.(include "OpenBSD/host")
           ;; rc
-          (static-file "/etc/sysctl.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/rc.conf.local"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.ix0"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/mail/smtpd.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o640)
+          (static-etc-file "/etc/sysctl.conf")
+          (static-etc-file "/etc/hostname.ix0")
+          (static-etc-file "/etc/mail/smtpd.conf")
           (resource 'file "/etc/mail/dkim/os.kmx.io.key"
                     :owner "root"
                     :group "_rspamd"
@@ -53,19 +41,10 @@
                        :owner "root"
                        :group "wheel"
                        :mode #o640)
-          ;; pf
-          #.(include "pf")
-          ;; sshd
-          #.(include "sshd")
-          ;; genpassword
-          #.(include "OpenBSD/genpassword")
-          ;; backup
-          #.(include "OpenBSD/backup")
           ;; users
           #.(include "user/dx")
           #.(include "user/dx/forward-email")
           #.(include "user/root/forward-email")
-          #.(include "user/zor")
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
@@ -84,14 +63,4 @@
           #.(include "git.kmx.io/test")
           #.(include "metrics.kmx.io/production")
           #.(include "skills.kmx.io/production")
-          #.(include "www.kmx.io/production")
-          ;; os.kmx.io
-          (resource 'directory "/var/www/os.kmx.io"
-                    :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (static-file "/etc/nginx/available/os.kmx.io.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644))
+          #.(include "www.kmx.io/production"))
