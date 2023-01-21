@@ -1,0 +1,1 @@
+/home/export/proton/root /home/export/proton/swap -network=192.168.1 -mask=255.255.255.0
