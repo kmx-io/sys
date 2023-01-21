@@ -53,12 +53,15 @@
           ;; users
           #.(include "user/dx")
           #.(include "user/dx/x240")
-;;          #.(include "user/dx/forward-email")
-;;          #.(include "user/root/forward-email")
+          #.(include "user/dx/forward-email")
+          #.(include "user/root/forward-email")
+          #.(include "user/npm")
 ;;          #.(include "user/judy")
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")
+          ;; PostgreSQL
+          #.(include "postgresql")
           ;; Nginx
           #.(include "nginx"))
 

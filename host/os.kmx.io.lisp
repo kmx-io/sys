@@ -45,6 +45,7 @@
           #.(include "user/dx")
           #.(include "user/dx/forward-email")
           #.(include "user/root/forward-email")
+          #.(include "user/npm")
           #.(include "user/vrizzt")
           ;; git
           #.(include "git")

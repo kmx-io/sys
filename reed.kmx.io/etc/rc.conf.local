@@ -1,3 +1,6 @@
 httpd_flags=NO
+mountd_flags=
+nfsd_flags=-t -u -n 4
+portmap_flags=
 
 pkg_scripts="icecast mpd nginx"
