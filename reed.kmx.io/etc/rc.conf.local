@@ -3,4 +3,4 @@ mountd_flags=
 nfsd_flags=-t -u -n 4
 portmap_flags=
 
-pkg_scripts="icecast mpd nginx transmission_daemon"
+pkg_scripts="icecast mpd rad_kmx nginx transmission_daemon"

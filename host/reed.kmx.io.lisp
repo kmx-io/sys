@@ -56,6 +56,7 @@
           #.(include "user/dx/forward-email")
           #.(include "user/root/forward-email")
           #.(include "user/npm")
+          #.(include "user/youtube-dl")
 ;;          #.(include "user/judy")
           #.(include "user/vrizzt")
           ;; git
