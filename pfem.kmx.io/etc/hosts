@@ -3,7 +3,7 @@
 ::1             localhost
 
 # Apple
-192.168.1.10    mini mini.kmx.io
+192.168.2.10    mini mini.kmx.io
 192.168.1.11    mi7 mi7.kmx.io
 192.168.1.14    iPhoneTiyon
 192.168.1.15    macbookAirTiyon
@@ -24,17 +24,20 @@
 192.168.1.35    r5 r5.kmx.io
 192.168.1.36    r6 r6.kmx.io
 192.168.1.37    r7 r7.kmx.io
+192.168.1.38    r8 r8.kmx.io
 
 # other desktops/laptops
 192.168.1.44    dd dd.kmx.io
+192.168.1.49    zap zap.kmx.io
 
 # servers
-192.168.1.50    tci50 tci50.kmx.io
-192.168.1.51    tci51 tci51.kmx.io
-192.168.1.52    tci52 tci52.kmx.io
-192.168.1.53    tci53 tci53.kmx.io
-192.168.1.60    tca60 tca60.kmx.io
-192.168.1.68    tcp0 tcp0.kmx.io
+192.168.2.50    tci50 tci50.kmx.io
+192.168.2.51    tci51 tci51.kmx.io
+192.168.2.52    tci52 tci52.kmx.io
+192.168.2.53    tci53 tci53.kmx.io
+192.168.2.60    tca60 tca60.kmx.io
+192.168.2.67    tcp1 tcp0.kmx.io
+192.168.2.68    tcp0 tcp0.kmx.io
 192.168.1.69    proton proton.kmx.io
 192.168.1.70    twice twice.kmx.io
 192.168.1.100   reed reed.kmx.io
