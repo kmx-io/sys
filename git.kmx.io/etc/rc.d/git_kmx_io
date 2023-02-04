@@ -2,8 +2,9 @@
 
 daemon="/bin/sh /home/git/_/start_"
 daemon_user=git
-rc_bg=YES
 
 . /etc/rc.d/rc.subr
+
+pexp=".*/beam[.]smp .* -home /home/git .*"
 
 rc_cmd $1
