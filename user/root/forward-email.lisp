@@ -1,6 +1,5 @@
 (resource 'file "/root/.forward"
           :owner "root"
-          :group "wheel"
-          :mode #o640
+          :mode #o600
           :content "dx@kmx.io
 ")

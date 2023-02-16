@@ -33,6 +33,7 @@ youtube-dl        2000
 git               7000
 git-backup        7001
 git_test          7002
+ci                7010
 npm               7170
 postgres          7200
 tunnel            7800
