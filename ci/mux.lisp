@@ -9,7 +9,8 @@
           :group "ci"
           :mode #o700
           :ensure :present)
-(static-file (str (homedir "ci") "/.ssh/authorized_keys")
-             :owner "ci"
-             :group "ci"
-             :mode #o600)
+(resource 'file (str (homedir "ci") "/.ssh/authorized_keys")
+          :owner "ci"
+          :group "ci"
+          :mode #o600
+          :content (read-file "ci/mux/home/ci/.ssh/authorized_keys"))

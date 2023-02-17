@@ -10,31 +10,21 @@
                             "rsync")))
 
 (resource 'host "bim.kmx.io"
+          #.(include "OpenBSD/host")
           ;; rc
-          (static-file "/etc/sysctl.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/rc.conf.local"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          (static-file "/etc/hostname.rge0"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o600)
-          ;; pf
-          #.(include "pf")
-          ;; sshd
-          #.(include "sshd")
-          ;; genpassword
-          #.(include "OpenBSD/genpassword")
-          ;; backup
-          #.(include "OpenBSD/backup")
+          (static-etc-file "/etc/sysctl.conf")
+          (static-etc-file "/etc/rc.conf.local")
+          (static-etc-file "/etc/hostname.rge0")
+          (resource 'file "/etc/hosts"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o644
+                    :content (read-file "hosts"))
           ;; users
           #.(include "user/dx")
           #.(include "user/dx/forward-email")
           #.(include "user/root/forward-email")
+          #.(include "user/vrizzt")
           ;; git
           #.(include "git")
           ;; Nginx
@@ -43,16 +33,7 @@
           #.(include "postgresql")
           ;; Sites
           #.(include "git.kmx.io/production")
-          #.(include "git.kmx.io/test")
           #.(include "metrics.kmx.io/production")
           #.(include "www.kmx.io/production")
-          ;; bim.kmx.io
-          (resource 'directory "/var/www/bim.kmx.io"
-                    :owner "root"
-                    :group "www"
-                    :mode #o755
-                    :ensure :present)
-          (static-file "/etc/nginx/available/bim.kmx.io.conf"
-                       :owner "root"
-                       :group "wheel"
-                       :mode #o644))
+          ;; ci
+          #.(include "ci/mux"))

@@ -3,7 +3,7 @@
 
 all: oaa vulon pfem bim os reed
 
-ci: tci50 tci51 tci52 tci53 tca60 pfem
+ci: tci50 tci51 tci52 tci53 tca60 bim
 
 git: os bim
 
