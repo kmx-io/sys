@@ -25,6 +25,4 @@
           #.(include "user/root/forward-email")
           ;; nginx
           #.(include "nginx")
-          #.(include "metrics.kmx.io/production")
-          ;; ci
-          #.(include "ci/mux"))
+          #.(include "metrics.kmx.io/production"))

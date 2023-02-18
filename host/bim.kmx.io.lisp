@@ -1,20 +1,11 @@
 (setq *host*
       (resource 'host "bim.kmx.io"
                 :user "root"
-                :hostname "bim"
-                :packages '("git"
-                            "libgit2"
-                            "nginx"
-                            "postgresql-contrib"
-                            "postgresql-server"
-                            "rsync")))
+                :hostname "bim"))
 
 (resource 'host "bim.kmx.io"
-          #.(include "OpenBSD/host")
           ;; rc
-          (static-etc-file "/etc/sysctl.conf")
-          (static-etc-file "/etc/rc.conf.local")
-          (static-etc-file "/etc/hostname.rge0")
+          ;;(static-etc-file "/etc/rc.conf.local")
           (resource 'file "/etc/hosts"
                     :owner "root"
                     :group "wheel"
@@ -33,7 +24,4 @@
           #.(include "postgresql")
           ;; Sites
           #.(include "git.kmx.io/production")
-          #.(include "metrics.kmx.io/production")
-          #.(include "www.kmx.io/production")
-          ;; ci
-          #.(include "ci/mux"))
+          #.(include "www.kmx.io/production"))
