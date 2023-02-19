@@ -1,3 +1,5 @@
 fcgiwrap_enable=YES
+git_kmx_io_enable=YES
 nginx_enable=YES
 postgresql_enable=YES
+www_kmx_io_enable=YES

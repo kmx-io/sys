@@ -32,17 +32,3 @@
           :group "www"
           :mode #o640
           :content (read-file "www.kmx.io/etc/nginx/available/www.kmx.io.conf"))
-
-(when (subtypep (type-of (host-os *host*)) 'os-openbsd)
-  (resource 'file "/etc/rc.d/www_kmx_io"
-            :owner "root"
-            :group "wheel"
-            :mode #o755
-            :content (read-file "www.kmx.io/OpenBSD/etc/rc.d/www_kmx_io")))
-
-(when (subtypep (type-of (host-os *host*)) 'os-freebsd)
-  (resource 'file "/etc/rc.d/www_kmx_io"
-            :owner "root"
-            :group "wheel"
-            :mode #o755
-            :content (read-file "www.kmx.io/FreeBSD/etc/rc.d/www_kmx_io")))

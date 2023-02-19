@@ -27,5 +27,15 @@
                        :mode #o640
                        :after #'reload-postgresql)
           ;; Sites
+          #.(include "www.kmx.io/production")
+          (resource 'file "/etc/rc.d/www_kmx_io"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o755
+                    :content (read-file "www.kmx.io/FreeBSD/etc/rc.d/www_kmx_io"))
           #.(include "git.kmx.io/production")
-          #.(include "www.kmx.io/production"))
+          (resource 'file "/etc/rc.d/git_kmx_io"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o755
+                    :content (read-file "git.kmx.io/FreeBSD/etc/rc.d/git_kmx_io")))

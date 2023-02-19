@@ -61,7 +61,22 @@
           ;; Sites
           #.(include "mail.kmx.io/production")
           #.(include "git.kmx.io/production")
+          (resource 'file "/etc/rc.d/fcgiwrap"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o755
+                    :content (read-file "git.kmx.io/OpenBSD/etc/rc.d/fcgiwrap"))
+          (resource 'file "/etc/rc.d/git_kmx_io"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o755
+                    :content (read-file "git.kmx.io/OpenBSD/etc/rc.d/git_kmx_io"))
           #.(include "git.kmx.io/test")
           #.(include "metrics.kmx.io/production")
           #.(include "skills.kmx.io/production")
-          #.(include "www.kmx.io/production"))
+          #.(include "www.kmx.io/production")
+          (resource 'file "/etc/rc.d/www_kmx_io"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o755
+                    :content (read-file "www.kmx.io/OpenBSD/etc/rc.d/www_kmx_io")))
