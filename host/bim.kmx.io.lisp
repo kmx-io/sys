@@ -5,7 +5,7 @@
 
 (resource 'host "bim.kmx.io"
           ;; rc
-          ;;(static-etc-file "/etc/rc.conf.local")
+          (static-etc-file "/etc/rc.conf.local")
           (resource 'file "/etc/hosts"
                     :owner "root"
                     :group "wheel"
@@ -21,7 +21,11 @@
           ;; Nginx
           #.(include "nginx")
           ;; PostgreSQL
-          #.(include "postgresql")
+          (static-file "/var/db/postgres/data14/pg_hba.conf"
+                       :owner "root"
+                       :group "postgres"
+                       :mode #o640
+                       :after #'reload-postgresql)
           ;; Sites
           #.(include "git.kmx.io/production")
           #.(include "www.kmx.io/production"))

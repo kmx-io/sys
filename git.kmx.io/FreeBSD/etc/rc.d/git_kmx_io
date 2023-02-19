@@ -1,0 +1,19 @@
+#!/bin/sh
+
+. /etc/rc.subr
+
+name="git_kmx_io"
+rcvar=git_kmx_io_enable
+
+git_kmx_io_user=git
+git_kmx_io_group=git
+
+command="/home/git/_/start_"
+_pidprefix="/var/run"
+pidfile="${_pidprefix}/${name}.pid"
+
+[ -z "$git_kmx_io_enable" ]     && git_kmx_io_enable="NO"
+
+load_rc_config $name
+
+run_rc_command "$1"

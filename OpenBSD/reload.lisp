@@ -1,3 +1,5 @@
+(in-package :cl-unix-cybernetics-user)
+
 (defun reload-dhcpd (resource os)
   (declare (ignore resource os))
   (run-as-root "/etc/rc.d/dhcpd restart"))
