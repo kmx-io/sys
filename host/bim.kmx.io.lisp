@@ -6,6 +6,10 @@
 (resource 'host "bim.kmx.io"
           ;; rc
           (static-etc-file "/etc/rc.conf.local")
+          (static-etc-file "/etc/mail/mailer.conf"
+                           :mode #o644)
+          (static-etc-file "/usr/local/etc/mail/secrets")
+          (static-etc-file "/usr/local/etc/mail/smtpd.conf")
           (resource 'file "/etc/hosts"
                     :owner "root"
                     :group "wheel"
@@ -38,4 +42,9 @@
                     :owner "root"
                     :group "wheel"
                     :mode #o755
-                    :content (read-file "git.kmx.io/FreeBSD/etc/rc.d/git_kmx_io")))
+          #.(include "www.kmx.io/production")
+          (resource 'file "/etc/rc.d/www_kmx_io"
+                    :owner "root"
+                    :group "wheel"
+                    :mode #o755
+                    :content (read-file "www.kmx.io/FreeBSD/etc/rc.d/www_kmx_io")))

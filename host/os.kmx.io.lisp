@@ -24,6 +24,7 @@
           ;; rc
           (static-etc-file "/etc/sysctl.conf")
           (static-etc-file "/etc/hostname.ix0")
+          (static-etc-file "/etc/mail/secrets")
           (static-etc-file "/etc/mail/smtpd.conf")
           (resource 'file "/etc/mail/dkim/os.kmx.io.key"
                     :owner "root"
@@ -71,7 +72,6 @@
                     :group "wheel"
                     :mode #o755
                     :content (read-file "git.kmx.io/OpenBSD/etc/rc.d/git_kmx_io"))
-          #.(include "git.kmx.io/test")
           #.(include "metrics.kmx.io/production")
           #.(include "skills.kmx.io/production")
           #.(include "www.kmx.io/production")

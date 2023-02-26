@@ -1,9 +1,14 @@
 fcgiwrap_enable=YES
 fcgiwrap_flags="-c 20"
-fcgiwrap_socket="tcp:127.0.0.1:9001"
 fcgiwrap_user=git
 fcgiwrap_group=git
+fcgiwrap_socket=tcp:127.0.0.1:9001
 git_kmx_io_enable=YES
 nginx_enable=YES
 postgresql_enable=YES
+sendmail_enable=NO
+sendmail_submit_enable=NO
+sendmail_outbound_enable=NO
+sendmail_msp_queue_enable=NO
+smtpd_enable=YES
 www_kmx_io_enable=YES
