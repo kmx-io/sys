@@ -1,4 +1,8 @@
 fcgiwrap_enable=YES
+fcgiwrap_flags="-c 20"
+fcgiwrap_socket="tcp:127.0.0.1:9001"
+fcgiwrap_user=git
+fcgiwrap_group=git
 git_kmx_io_enable=YES
 nginx_enable=YES
 postgresql_enable=YES

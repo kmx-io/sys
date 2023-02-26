@@ -9,8 +9,7 @@ www_kmx_io_user=www_kmx_io
 www_kmx_io_group=www_kmx_io
 
 command="/home/www.kmx.io/start_"
-_pidprefix="/var/run"
-pidfile="${_pidprefix}/${name}.pid"
+pidfile="/home/www.kmx.io/run/pid"
 
 [ -z "$www_kmx_io_enable" ]     && www_kmx_io_enable="NO"
 

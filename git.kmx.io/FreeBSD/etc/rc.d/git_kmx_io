@@ -9,8 +9,7 @@ git_kmx_io_user=git
 git_kmx_io_group=git
 
 command="/home/git/_/start_"
-_pidprefix="/var/run"
-pidfile="${_pidprefix}/${name}.pid"
+pidfile="/home/git/_/run/pid"
 
 [ -z "$git_kmx_io_enable" ]     && git_kmx_io_enable="NO"
 
