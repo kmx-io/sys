@@ -187,6 +187,18 @@ If you don't want this, comment out the following line or read up on CORS.
       </mount>
   -->
 
+  <mount type="normal">
+    <mount-name>/radio/reed.flac</mount-name>
+    <encoder>
+      <quality>0.8</quality>
+      <type>flac</type>
+      <bitrate>0</bitrate>
+      <channels>2</channels>
+      <samplerate>44100</samplerate>
+      <compression_level>8</compression_level>
+    </encoder>
+  </mount>
+
   <fileserve>0</fileserve>
 
   <paths>

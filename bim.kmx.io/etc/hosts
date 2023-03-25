@@ -1,5 +1,5 @@
 # /etc/hosts
-127.0.0.1       localhost
+127.0.0.1       localhost git.kmx.io www.kmx.io kmx.io
 ::1             localhost
 
 # Apple
@@ -42,7 +42,7 @@
 192.168.1.70    twice twice.kmx.io
 192.168.1.100   reed reed.kmx.io
 192.168.1.101   beetle beetle.kmx.io
-192.168.2.102   bim bim.kmx.io git.kmx.io www.kmx.io kmx.io
+192.168.2.102   bim bim.kmx.io
 
 # gate
 192.168.1.250   pfem pfem.kmx.io
