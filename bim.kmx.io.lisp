@@ -4,7 +4,7 @@
 
 (in-package :cl-unix-cybernetics-user)
 
-(load "FreeBSD/defs")
+(load "OpenBSD/defs")
 
 #.(include "host/bim.kmx.io")
 

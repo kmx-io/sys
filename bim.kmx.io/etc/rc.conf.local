@@ -1,14 +1,3 @@
-fcgiwrap_enable=YES
-fcgiwrap_flags="-c 20"
-fcgiwrap_user=git
-fcgiwrap_group=git
-fcgiwrap_socket=tcp:127.0.0.1:9001
-git_kmx_io_enable=YES
-nginx_enable=YES
-postgresql_enable=YES
-sendmail_enable=NO
-sendmail_submit_enable=NO
-sendmail_outbound_enable=NO
-sendmail_msp_queue_enable=NO
-smtpd_enable=YES
-www_kmx_io_enable=YES
+resolvd_flags=NO
+unbound_flags=
+pkg_scripts="postgresql fcgiwrap nginx php74_fpm redis rspamd exwm_smtp git_kmx_io mail_kmx_io metrics_kmx_io skills_kmx_io www_kmx_io"
