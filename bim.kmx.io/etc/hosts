@@ -1,0 +1,53 @@
+# /etc/hosts
+127.0.0.1       localhost git.kmx.io www.kmx.io kmx.io
+::1             localhost
+
+# Apple
+192.168.2.10    mini mini.kmx.io
+192.168.1.11    mi7 mi7.kmx.io
+192.168.1.14    iPhoneTiyon
+192.168.1.15    macbookAirTiyon
+192.168.1.17    iPhonePatrice
+
+# Android
+192.168.1.20    htc626-1 htc626-1.kmx.io
+192.168.1.21    htc626-2 htc626-2.kmx.io
+192.168.1.22    redminote10 redminote10.kmx.io
+192.168.1.23    s86 s86.kmx.io
+192.168.1.24    tab tab.kmx.io
+
+# roots
+192.168.1.31    r1 r1.kmx.io
+192.168.1.32    r2 r2.kmx.io
+192.168.1.33    r3 r3.kmx.io
+192.168.1.34    r4 r4.kmx.io
+192.168.1.35    r5 r5.kmx.io
+192.168.1.36    r6 r6.kmx.io
+192.168.1.37    r7 r7.kmx.io
+192.168.1.38    r8 r8.kmx.io
+
+# other desktops/laptops
+192.168.1.44    dd dd.kmx.io
+192.168.1.49    zap zap.kmx.io
+
+# servers
+192.168.2.50    tci50 tci50.kmx.io
+192.168.2.51    tci51 tci51.kmx.io
+192.168.2.52    tci52 tci52.kmx.io
+192.168.2.53    tci53 tci53.kmx.io
+192.168.2.60    tca60 tca60.kmx.io
+192.168.2.67    tcp1 tcp0.kmx.io
+192.168.2.68    tcp0 tcp0.kmx.io
+192.168.1.69    proton proton.kmx.io
+192.168.1.70    twice twice.kmx.io
+192.168.1.100   reed reed.kmx.io
+192.168.1.101   beetle beetle.kmx.io
+192.168.2.102   bim bim.kmx.io
+
+# gate
+192.168.1.250   pfem pfem.kmx.io
+
+# external
+46.23.92.153    oaa oaa.kmx.io
+54.38.38.169    os os.kmx.io
+192.248.150.23  vulon vulon.kmx.io
