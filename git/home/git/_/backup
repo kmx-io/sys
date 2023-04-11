@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -a git-backup@git.kmx.io:/home/git/* /home/git/
