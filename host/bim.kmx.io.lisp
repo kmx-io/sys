@@ -6,7 +6,8 @@
 (resource 'host "bim.kmx.io"
           #.(include "OpenBSD/host")
           ;; rc
-          (static-etc-file "/etc/hosts")
+          (static-etc-file "/etc/hosts"
+                           :mode #o644)
           (static-etc-file "/etc/hostname.em0")
           (static-etc-file "/etc/sysctl.conf")
           ;; users
