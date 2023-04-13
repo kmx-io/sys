@@ -9,4 +9,4 @@
           :owner "ci_c3"
           :group "ci_c3"
           :mode #o600
-          :content (read-file "ci/c3/host/home/ci/.ssh/authorized_keys"))
+          :content (read-file "ci/c3/host/home/ci_c3/.ssh/authorized_keys"))
