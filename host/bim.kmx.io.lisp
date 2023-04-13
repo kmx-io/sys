@@ -6,8 +6,9 @@
 (resource 'host "bim.kmx.io"
           #.(include "OpenBSD/host")
           ;; rc
-          (static-etc-file "/etc/sysctl.conf")
+          (static-etc-file "/etc/hosts")
           (static-etc-file "/etc/hostname.em0")
+          (static-etc-file "/etc/sysctl.conf")
           ;; users
           #.(include "user/dx")
           #.(include "user/dx/forward-email")
