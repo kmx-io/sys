@@ -36,6 +36,7 @@
 192.168.2.52    tci52 tci52.kmx.io
 192.168.2.53    tci53 tci53.kmx.io
 192.168.2.60    tca60 tca60.kmx.io
+192.168.2.61    tca61 tca61.kmx.io
 192.168.2.67    tcp1 tcp0.kmx.io
 192.168.2.68    tcp0 tcp0.kmx.io
 192.168.1.69    proton proton.kmx.io
